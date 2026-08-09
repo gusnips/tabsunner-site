@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import i18n, { SUPPORTED_LANGUAGES, type SupportedLanguage } from "../i18n";
 import { LINKS } from "../lib/links";
 import { CometMark } from "./CometMark";
+import { GithubMark } from "./GithubMark";
 
 /**
  * The page's own browser chrome: favicon + wordmark on the left, an omnibox
@@ -9,6 +10,9 @@ import { CometMark } from "./CometMark";
  * including the one we want taken (Download gets the glow; see DESIGN.md's
  * Glow-Means-Live rule: it's the primary action). Like the hero's, it also
  * jumps to the flight plan — the ZIP is inert until it's loaded unpacked.
+ * GitHub sits with the actions, not the section anchors: it's an external
+ * destination, and the icon keeps it visible on mobile, where the center
+ * links collapse.
  */
 export function Nav() {
   const { t } = useTranslation();
@@ -60,14 +64,6 @@ export function Nav() {
           <a href="#privacy" className="transition-colors hover:text-star-100">
             {t("nav.privacy")}
           </a>
-          <a
-            href={LINKS.repo}
-            target="_blank"
-            rel="noreferrer"
-            className="transition-colors hover:text-star-100"
-          >
-            {t("nav.github")}
-          </a>
         </nav>
 
         {/*
@@ -76,6 +72,22 @@ export function Nav() {
          * omnibox's mx-auto takes over, so this margin stands down.
          */}
         <div className="ml-auto flex shrink-0 items-center gap-3 md:ml-0">
+          {/*
+           * Chrome-bar toolbar icon: borderless, color-only on hover — the
+           * bordered pill is reserved for the Download CTA. Below sm the bar
+           * is already full (wordmark, language, Download), so GitHub lives
+           * in the footer on phones instead of overflowing the chrome.
+           */}
+          <a
+            href={LINKS.repo}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={t("nav.github")}
+            title={t("nav.github")}
+            className="hidden rounded-full p-1.5 text-star-500 transition-colors hover:text-star-100 sm:block"
+          >
+            <GithubMark size={16} />
+          </a>
           <div
             role="group"
             aria-label={t("nav.languageLabel")}

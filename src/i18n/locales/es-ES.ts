@@ -163,6 +163,7 @@ export const esES: Locale = {
   footer: {
     tagline: "Tú pones la meta. Él pilota tus pestañas.",
     chromium: "Solo Chromium — Chrome, Brave, Edge, Arc, Opera, Vivaldi.",
+    openSource: "Código abierto en GitHub",
     license: "Código abierto, licencia MIT.",
     productHeading: "Producto",
     projectHeading: "Proyecto",

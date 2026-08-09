@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { LINKS } from "../lib/links";
 import { CometMark } from "./CometMark";
+import { GithubMark } from "./GithubMark";
 
 export function Footer() {
   const { t } = useTranslation();
@@ -32,6 +33,17 @@ export function Footer() {
             </p>
             <p className="mt-3 max-w-[40ch] text-sm text-star-300">{t("footer.tagline")}</p>
             <p className="mt-4 font-mono text-xs text-star-500">{t("footer.chromium")}</p>
+            {/* The open-source claim belongs with the brand, and the icon does
+                the recognizing — the columns to the right stay navigational. */}
+            <a
+              href={LINKS.repo}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-sm text-star-300 transition-colors hover:text-flare-300"
+            >
+              <GithubMark size={16} />
+              {t("footer.openSource")}
+            </a>
           </div>
 
           <nav aria-label={t("footer.productHeading")}>
@@ -76,7 +88,14 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-wrap items-center justify-between gap-3 border-t border-field-600/50 pt-6 font-mono text-xs text-star-500">
-          <span>{t("footer.license")}</span>
+          <a
+            href={LINKS.license}
+            target="_blank"
+            rel="noreferrer"
+            className="transition-colors hover:text-star-300"
+          >
+            {t("footer.license")}
+          </a>
           <span>© 2026 Gus</span>
         </div>
       </div>

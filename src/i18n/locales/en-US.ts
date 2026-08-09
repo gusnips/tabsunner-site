@@ -156,6 +156,7 @@ export const enUS = {
   footer: {
     tagline: "You give the goal. It runs the tabs.",
     chromium: "Chromium only — Chrome, Brave, Edge, Arc, Opera, Vivaldi.",
+    openSource: "Open source on GitHub",
     license: "Open source, MIT license.",
     productHeading: "Product",
     projectHeading: "Project",

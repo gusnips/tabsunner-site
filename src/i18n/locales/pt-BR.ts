@@ -163,6 +163,7 @@ export const ptBR: Locale = {
   footer: {
     tagline: "Você dá o objetivo. Ele pilota as abas.",
     chromium: "Só Chromium — Chrome, Brave, Edge, Arc, Opera, Vivaldi.",
+    openSource: "Código aberto no GitHub",
     license: "Código aberto, licença MIT.",
     productHeading: "Produto",
     projectHeading: "Projeto",

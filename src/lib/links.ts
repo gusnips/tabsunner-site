@@ -13,6 +13,7 @@ export const LINKS = {
   releases: "https://github.com/gusnips/tabrunner/releases/latest",
   repo: "https://github.com/gusnips/tabrunner",
   issues: "https://github.com/gusnips/tabrunner/issues",
+  license: "https://github.com/gusnips/tabrunner/blob/main/LICENSE",
   // Legal docs render in-site (synced from the chrome repo by `bun run sync:legal`).
   privacy: "/privacy",
   terms: "/terms",
