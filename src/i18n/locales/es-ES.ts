@@ -10,6 +10,8 @@ export const esES: Locale = {
     download: "Descargar",
     github: "GitHub",
     languageLabel: "Idioma",
+    sectionsLabel: "Secciones",
+    skipToContent: "Saltar al contenido",
   },
   hero: {
     titleA: "Tú pones la meta.",
@@ -25,8 +27,10 @@ export const esES: Locale = {
       "Rellena este formulario con mis datos de trabajo…",
       "Archiva todos los boletines de la semana pasada…",
     ],
-    demoNote:
-      "El cometa es la idea en miniatura — instala TabRunner y la ejecución ocurre en tu navegador real.",
+    demoHint:
+      "Lanza una — eso suelta un cometa por el cielo, y nada más. La ejecución real necesita la extensión.",
+    demoLaunched:
+      "Ese cometa es la idea en miniatura. Instalado, ejecuta la tarea en tu navegador real.",
     browsersLabel: "Funciona en",
     chromiumNote:
       "Solo Chromium. Firefox y Safari no tienen la API de entrada confiable, así que reciben una explicación, no un botón muerto.",
@@ -69,7 +73,7 @@ export const esES: Locale = {
       },
       {
         title: "Ve la página, no el HTML",
-        body: 'El modelo lee un árbol de accesibilidad compacto — [ref=e12] button "Enviar" — nunca el HTML crudo. Prompts pequeños, refs estables, y las contraseñas o tarjetas nunca salen de la página.',
+        body: "El modelo lee un árbol de accesibilidad compacto, nunca el HTML crudo — prompts pequeños, refs estables, y contraseñas o tarjetas que nunca salen de la página.",
       },
       {
         title: "Barandillas que aguantan",

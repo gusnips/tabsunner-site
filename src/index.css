@@ -104,21 +104,14 @@ body {
   animation: ion-shimmer 2.4s linear infinite;
 }
 
-/* Entrance — sections rise out of the field once, already-visible default. */
-@keyframes field-rise {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-    filter: blur(6px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-    filter: none;
-  }
-}
-.field-rise {
-  animation: field-rise 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+/*
+ * Focus ring — the page owns it rather than inheriting the UA's. Ion, because
+ * focus is the one thing on the page that moves under the keyboard.
+ */
+:focus-visible {
+  outline: 2px solid var(--color-ion-400);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -126,8 +119,7 @@ body {
     scroll-behavior: auto;
   }
   .live-dot,
-  .shimmer-text,
-  .field-rise {
+  .shimmer-text {
     animation: none;
   }
   .shimmer-text {

@@ -7,8 +7,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
+    "check": "bun run scripts/check-run-phase.ts",
     "preview": "vite preview",
-    "sync": "bun run scripts/sync-assets.ts"
+    "sync": "bun run scripts/sync-assets.ts",
+    "og": "bun run scripts/gen-og.ts",
+    "shoot": "bun run scripts/shoot.ts"
   },
   "dependencies": {
     "i18next": "^26.3.6",

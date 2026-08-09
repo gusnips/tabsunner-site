@@ -29,9 +29,19 @@ typography:
     fontFamily: "JetBrains Mono Variable, ui-monospace, monospace"
     fontSize: "0.75rem"
     fontFeature: "tnum"
+  telemetry-sm:
+    fontFamily: "JetBrains Mono Variable, ui-monospace, monospace"
+    fontSize: "0.6875rem"
+    fontFeature: "tnum"
+  telemetry-xs:
+    fontFamily: "JetBrains Mono Variable, ui-monospace, monospace"
+    fontSize: "0.625rem"
+    letterSpacing: "0.05em"
 rounded:
   panel: "16px"
   control: "12px"
+  chip: "6px"
+  focus: "4px"
   pill: "9999px"
 components:
   button-primary:
@@ -81,6 +91,12 @@ canvas field, telemetry ticks, and the one authored moment is a task launching a
 hero's mission line. Everything decorative must be a comet, a star, a trail, or an instrument —
 nothing else earns a place.
 
+**The One Moment Rule.** The comet launch is the page's authored motion; the canvas and the run
+console are ambient instruments that were always running. Sections do not animate in. A uniform
+scroll-reveal on every heading is the opposite of one authored moment — and it makes content
+that is invisible until observed, which no static capture, print, or non-scrolling reader ever
+sees. Content is visible at rest, always.
+
 **Key Characteristics:**
 
 - Deep-field indigo ground, never pure black; stars and comet trails carry the light.
@@ -88,8 +104,8 @@ nothing else earns a place.
 - Telemetry amber measures: timers, token counters, live pulses. Amber means "the agent is working."
 - Browser chrome is compositional material: the sticky top bar is a chrome bar (favicon, omnibox,
   actions); the screenshot viewer sits inside a browser frame; the brand mark is a tab in flight.
-- Type does two jobs only — Unbounded speaks (display), JetBrains Mono measures (telemetry),
-  Figtree explains (body).
+- Type does three jobs only — Unbounded speaks (display), Figtree explains (body), JetBrains Mono
+  measures (telemetry). Nothing else earns a typeface.
 
 ## Colors
 
@@ -132,8 +148,9 @@ old-brand until the extension's redesign lands.
 - **Display** (600, `clamp(2.1rem, 4.8vw, 3.6rem)`, 1.08, −0.02em): hero statement (two block
   lines, second in ion) and section headings (`text-3xl`–`4xl`).
 - **Body** (400–500, 1–1.125rem, measure ≤62ch): explanatory copy.
-- **Telemetry** (mono, `text-[10px]`–`text-sm`, uppercase tracking for labels, `tnum` for values):
-  timers, counters, commands, status lines, badges.
+- **Telemetry** (mono, three steps only — `text-[10px]` badges and frame chrome, `text-[11px]`
+  plan and diagram captions, `text-xs`/`text-sm` timers and tool lines; uppercase tracking for
+  labels, `tnum` for values): timers, counters, commands, status lines, badges.
 
 ### Named Rules
 
@@ -192,12 +209,22 @@ running things (or the one action we want taken) may glow.
 - The page's own browser chrome: comet-tab favicon + wordmark left, omnibox pill
   (`tabrunner.app`, mono, lock glyph) center, text links + EN/PT/ES segmented switcher + primary
   Download right. Sticky, backdrop-blurred field-ground.
+- Below `md` the omnibox and section links stand down and the actions cluster (switcher +
+  Download) pins to the right edge — the bar keeps its two anchors, brand and action, at the
+  two margins. The wordmark stays: a 26px mark alone is not a brand.
+
+### Focus
+
+- One ion ring for every focusable thing: `2px` solid ion-bright at `2px` offset, on
+  `:focus-visible` only. A skip link is the first focusable element on the page.
 
 ### Run Console (signature)
 
 Simulated agent run, labelled "simulated demo": task header with live amber pulse, plan with
-check/active/pending steps, mono tool-call lines, shimmer on the working verb, amber telemetry
-footer (elapsed, tokens). One clock derives every state; reduced motion shows the finished run.
+check/active/pending steps (authored SVG marks, never `✓`/`▸` glyphs), mono tool-call lines,
+shimmer on the working verb, amber telemetry footer (elapsed, tokens). One clock derives every
+state, the run reads as planning until the plan exists, and the token count lands on its total
+exactly as the run finishes. Reduced motion shows the finished run.
 
 ## Do's and Don'ts
 

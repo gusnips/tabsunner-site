@@ -14,4 +14,4 @@ related_targets: []
 - **Memorable moment:** submit the mission line → a comet-tab launches across the sky with an amber nucleus flash.
 - **i18n:** en-US / pt-BR / es-ES, browser-language default, `?lang=` override, localStorage persistence, switcher in nav.
 - **Constraints:** never hardcode a version (latest-alias URLs only, see `src/lib/links.ts`); state CRX caveats and Chromium-only plainly; no invented proof; screenshots synced from `../chrome` via `bun run sync`.
-- **Open:** extension redesign will adopt this palette + the comet-tab mark (chosen candidate A, `preview/mark-a-bars.png`); CF Pages project name in `.github/workflows/deploy.yml` may need adjusting to the real dashboard project.
+- **Open:** product screenshots are pre-rename ("Regent"/"Regentry", old purple, crown mark) and need retaking against the current build — the site labels them old-brand until then. Extension redesign will adopt this palette + the comet-tab mark (geometry: `src/components/CometMark.tsx`). CF Pages project name in `.github/workflows/deploy.yml` may need adjusting to the real dashboard project.

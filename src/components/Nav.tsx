@@ -18,10 +18,16 @@ export function Nav() {
 
   return (
     <header className="sticky top-0 z-20 border-b border-field-600/50 bg-field-900/80 backdrop-blur-md">
+      <a
+        href="#main"
+        className="sr-only rounded-full bg-ion-500 px-4 py-2 font-semibold text-field-950 focus:not-sr-only focus:absolute focus:top-2 focus:left-4 focus:z-30"
+      >
+        {t("nav.skipToContent")}
+      </a>
       <div className="mx-auto flex h-14 max-w-6xl items-center gap-4 px-4 sm:px-6">
-        <a href="#top" className="flex items-center gap-2.5 text-ion-400">
+        <a href="#top" className="flex shrink-0 items-center gap-2.5 text-ion-400">
           <CometMark size={26} />
-          <span className="hidden font-display text-sm font-semibold tracking-wide text-star-100 sm:block">
+          <span className="font-display text-sm font-semibold tracking-wide text-star-100">
             TabRunner
           </span>
         </a>
@@ -43,7 +49,7 @@ export function Nav() {
           <span className="font-mono text-xs text-star-500">tabrunner.app</span>
         </div>
 
-        <nav className="ml-auto hidden items-center gap-6 text-sm text-star-300 md:flex md:ml-0">
+        <nav aria-label={t("nav.sectionsLabel")} className="hidden items-center gap-6 text-sm text-star-300 md:flex">
           <a href="#features" className="transition-colors hover:text-star-100">
             {t("nav.features")}
           </a>
@@ -63,34 +69,45 @@ export function Nav() {
           </a>
         </nav>
 
-        <div
-          role="group"
-          aria-label={t("nav.languageLabel")}
-          className="flex items-center rounded-full border border-field-600/70 p-0.5 font-mono text-[11px]"
-        >
-          {SUPPORTED_LANGUAGES.map((lng) => (
-            <button
-              key={lng}
-              type="button"
-              onClick={() => switchLanguage(lng)}
-              aria-pressed={i18n.language === lng}
-              className={`rounded-full px-2 py-1 transition-colors ${
-                i18n.language === lng
-                  ? "bg-field-600 text-ion-300"
-                  : "text-star-500 hover:text-star-300"
-              }`}
-            >
-              {lng === "en-US" ? "EN" : lng === "pt-BR" ? "PT" : "ES"}
-            </button>
-          ))}
-        </div>
+        {/*
+         * ml-auto pins the actions right on mobile, where the omnibox and links
+         * are hidden and nothing else absorbs the free space. From md up the
+         * omnibox's mx-auto takes over, so this margin stands down.
+         */}
+        <div className="ml-auto flex shrink-0 items-center gap-3 md:ml-0">
+          <div
+            role="group"
+            aria-label={t("nav.languageLabel")}
+            className="flex items-center rounded-full border border-field-600/70 p-0.5 font-mono text-[11px]"
+          >
+            {SUPPORTED_LANGUAGES.map((lng) => (
+              <button
+                key={lng}
+                type="button"
+                onClick={() => switchLanguage(lng)}
+                aria-pressed={i18n.language === lng}
+                title={i18n.getFixedT(lng)("langName")}
+                className={`rounded-full px-2 py-1 transition-colors ${
+                  i18n.language === lng
+                    ? "bg-field-600 text-ion-300"
+                    : "text-star-500 hover:text-star-300"
+                }`}
+              >
+                <span aria-hidden="true">
+                  {lng === "en-US" ? "EN" : lng === "pt-BR" ? "PT" : "ES"}
+                </span>
+                <span className="sr-only">{i18n.getFixedT(lng)("langName")}</span>
+              </button>
+            ))}
+          </div>
 
-        <a
-          href={LINKS.crx}
-          className="rounded-full bg-ion-500 px-4 py-2 text-sm font-semibold text-field-950 shadow-[0_0_24px_-4px] shadow-ion-500/50 transition-all hover:bg-ion-400 hover:shadow-ion-400/60"
-        >
-          {t("nav.download")}
-        </a>
+          <a
+            href={LINKS.crx}
+            className="rounded-full bg-ion-500 px-4 py-2 text-sm font-semibold text-field-950 shadow-[0_0_24px_-4px] shadow-ion-500/50 transition-all hover:bg-ion-400 hover:shadow-ion-400/60"
+          >
+            {t("nav.download")}
+          </a>
+        </div>
       </div>
     </header>
   );

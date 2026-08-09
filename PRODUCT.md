@@ -28,9 +28,11 @@ Two claims a neighboring product cannot copy:
 
 1. **It runs in your browser, not a sandbox** — it acts on the sites you're already logged into,
    with genuine trusted input events (CDP), not synthetic JS dispatches sites can ignore.
-2. **Provider-agnostic by construction** — 15 presets plus any OpenAI/Anthropic-compatible
-   endpoint; subscription sign-in (Anthropic, OpenAI, Kimi) or API key. No TabRunner server, no
-   relay, no account, no telemetry. Your key goes straight from the extension to your provider.
+2. **Provider-agnostic by construction** — 15 presets across 12 vendors (Anthropic, OpenAI and
+   Kimi appear twice: subscription sign-in and API key), plus any OpenAI/Anthropic-compatible
+   endpoint. No TabRunner server, no relay, no account, no telemetry. Your key goes straight
+   from the extension to your provider. Source of truth:
+   `chrome/src/modules/providers/presets.ts` — the site's chip list is the 12 vendor names.
 
 ## Operating Context
 
@@ -69,9 +71,14 @@ Two claims a neighboring product cannot copy:
 ## Evidence on Hand
 
 - `chrome/docs/screenshots/`: 4 real 1280×800 product shots (side panel, chat/run, providers,
-  second chat).
-- `chrome/docs/og.png`: 1200×630 social card, dark purple, "You decide. It does the legwork."
-- `chrome/public/icon/`: comet tile PNGs (16–128).
+  second chat). **Stale as brand proof (2026-08-09):** they show the pre-rename build — the
+  product is named "Regent"/"Regentry" in the panel chrome, wearing the retired purple and the
+  old crown mark, and one shot's page content is a competitor's comparison article. Retake
+  against the current build before the site is promoted. The site labels them as old-brand in
+  the meantime (`shots.note`).
+- `site/public/og.png`: 1200×630 social card, regenerated 2026-08-09 in comet-ice with the
+  current tagline — authored by `site/scripts/gen-og.ts`, no longer synced from the extension.
+- `chrome/public/icon/`: comet tile PNGs (16–128), still the retired purple/crown.
 - `chrome/README.md`, `chrome/docs/mcp.md`, `chrome/docs/store-listing.md`: copy source.
 - `chrome/PRIVACY.md`: privacy policy (linked on GitHub).
 - No testimonials, customer logos, usage numbers, or pricing exist — never fabricate them.

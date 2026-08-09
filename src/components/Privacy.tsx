@@ -1,7 +1,26 @@
 import { useTranslation } from "react-i18next";
 import { LINKS } from "../lib/links";
 import { CometMark } from "./CometMark";
-import { Reveal } from "./Reveal";
+
+/** A hairline that points: the map has to say which way the data moves. */
+function Flow() {
+  return (
+    <div className="flex items-center" aria-hidden="true">
+      <span className="h-px w-8 bg-ion-500/60 sm:w-14" />
+      <svg
+        viewBox="0 0 8 8"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="-ml-px size-2 text-ion-500/70"
+      >
+        <path d="m3 1.5 3 2.5-3 2.5" />
+      </svg>
+    </div>
+  );
+}
 
 /**
  * No ground station — the data-flow answer, up front. A simple map: the
@@ -15,7 +34,7 @@ export function Privacy() {
   return (
     <section id="privacy" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-24 sm:px-6">
       <div className="grid items-center gap-12 lg:grid-cols-2">
-        <Reveal>
+        <div className="min-w-0">
           <h2 className="max-w-[20ch] font-display text-3xl font-semibold tracking-[-0.02em] text-balance sm:text-4xl">
             {t("privacy.title")}
           </h2>
@@ -54,54 +73,48 @@ export function Privacy() {
               <path d="M8 7h9v9" />
             </svg>
           </a>
-        </Reveal>
+        </div>
 
         {/* the data map */}
-        <Reveal delay={120}>
-          <div
-            className="rounded-2xl border border-field-500/60 bg-field-800/60 p-6 backdrop-blur-sm sm:p-8"
-            role="img"
-            aria-label={`${t("privacy.diagramBrowser")} → ${t("privacy.diagramProvider")}, ${t("privacy.diagramSites")}. ${t("privacy.diagramServer")}: ${t("privacy.diagramServerNone")}.`}
-          >
-            <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-x-3 gap-y-8">
-              {/* browser node */}
-              <div className="row-span-2 rounded-xl border border-ion-500/50 bg-field-900 px-4 py-5 text-center">
-                <CometMark size={28} className="mx-auto" />
-                <p className="mt-2 text-sm font-semibold text-star-100">
-                  {t("privacy.diagramBrowser")}
-                </p>
-              </div>
+        <div
+          className="min-w-0 rounded-2xl border border-field-500/60 bg-field-800/60 p-6 backdrop-blur-sm sm:p-8"
+          role="img"
+          aria-label={`${t("privacy.diagramBrowser")} → ${t("privacy.diagramProvider")}, ${t("privacy.diagramSites")}. ${t("privacy.diagramServer")}: ${t("privacy.diagramServerNone")}.`}
+        >
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-x-3 gap-y-8">
+            {/* browser node */}
+            <div className="row-span-2 rounded-xl border border-ion-500/50 bg-field-900 px-4 py-5 text-center">
+              <CometMark size={28} className="mx-auto" />
+              <p className="mt-2 text-sm font-semibold text-star-100">
+                {t("privacy.diagramBrowser")}
+              </p>
+            </div>
 
-              {/* flows */}
-              <div className="flex flex-col items-center gap-1" aria-hidden="true">
-                <span className="h-px w-10 bg-ion-500/60 sm:w-16" />
-              </div>
-              <div className="rounded-xl border border-field-500/60 bg-field-900 px-4 py-4 text-center">
-                <p className="text-sm font-semibold text-star-100">{t("privacy.diagramProvider")}</p>
-                <p className="mt-1 font-mono text-[11px] text-ion-300">
-                  {t("privacy.diagramKeyFlow")}
-                </p>
-              </div>
+            {/* flows */}
+            <Flow />
+            <div className="rounded-xl border border-field-500/60 bg-field-900 px-4 py-4 text-center">
+              <p className="text-sm font-semibold text-star-100">{t("privacy.diagramProvider")}</p>
+              <p className="mt-1 font-mono text-[11px] text-ion-300">
+                {t("privacy.diagramKeyFlow")}
+              </p>
+            </div>
 
-              <div className="flex flex-col items-center gap-1" aria-hidden="true">
-                <span className="h-px w-10 bg-ion-500/60 sm:w-16" />
-              </div>
-              <div className="rounded-xl border border-field-500/60 bg-field-900 px-4 py-4 text-center">
-                <p className="text-sm font-semibold text-star-100">{t("privacy.diagramSites")}</p>
-                <p className="mt-1 font-mono text-[11px] text-ion-300">
-                  {t("privacy.diagramTaskFlow")}
-                </p>
-              </div>
+            <Flow />
+            <div className="rounded-xl border border-field-500/60 bg-field-900 px-4 py-4 text-center">
+              <p className="text-sm font-semibold text-star-100">{t("privacy.diagramSites")}</p>
+              <p className="mt-1 font-mono text-[11px] text-ion-300">
+                {t("privacy.diagramTaskFlow")}
+              </p>
+            </div>
 
-              {/* the server that isn't */}
-              <div className="col-span-3 mx-auto rounded-xl border border-dashed border-field-500/70 px-6 py-3 text-center">
-                <p className="font-mono text-xs text-star-500">
-                  <s>{t("privacy.diagramServer")}</s> — {t("privacy.diagramServerNone")}
-                </p>
-              </div>
+            {/* the server that isn't */}
+            <div className="col-span-3 mx-auto rounded-xl border border-dashed border-field-500/70 px-6 py-3 text-center">
+              <p className="font-mono text-xs text-star-500">
+                <s>{t("privacy.diagramServer")}</s> — {t("privacy.diagramServerNone")}
+              </p>
             </div>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

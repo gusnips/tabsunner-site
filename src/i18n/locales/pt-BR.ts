@@ -10,6 +10,8 @@ export const ptBR: Locale = {
     download: "Baixar",
     github: "GitHub",
     languageLabel: "Idioma",
+    sectionsLabel: "Seções",
+    skipToContent: "Pular para o conteúdo",
   },
   hero: {
     titleA: "Você dá o objetivo.",
@@ -25,8 +27,10 @@ export const ptBR: Locale = {
       "Preencha este formulário com meus dados de trabalho…",
       "Arquive todas as newsletters da semana passada…",
     ],
-    demoNote:
-      "O cometa é a ideia em miniatura — instale o TabRunner e a execução acontece no seu navegador de verdade.",
+    demoHint:
+      "Lance uma — isso solta um cometa no céu, e nada mais. A execução de verdade precisa da extensão.",
+    demoLaunched:
+      "Aquele cometa é a ideia em miniatura. Instalado, ele roda a tarefa no seu navegador de verdade.",
     browsersLabel: "Roda no",
     chromiumNote:
       "Só Chromium. Firefox e Safari não têm a API de entrada confiável, então eles ganham uma explicação, não um botão morto.",
@@ -69,7 +73,7 @@ export const ptBR: Locale = {
       },
       {
         title: "Vê a página, não o HTML",
-        body: 'O modelo lê uma árvore de acessibilidade compacta — [ref=e12] button "Enviar" — nunca o HTML bruto. Prompts pequenos, refs estáveis, e senhas ou números de cartão nunca saem da página.',
+        body: "O modelo lê uma árvore de acessibilidade compacta, nunca o HTML bruto — prompts pequenos, refs estáveis, e senhas ou números de cartão que nunca saem da página.",
       },
       {
         title: "Guarda-corpos que aguentam",

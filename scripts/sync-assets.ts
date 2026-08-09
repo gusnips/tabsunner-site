@@ -1,29 +1,36 @@
 /**
- * Syncs product screenshots from the sibling extension repo (`../chrome`).
- * The comet-tab mark's site geometry lives in src/components/CometMark.tsx;
- * the social card is generated locally (scripts/gen-og.ts) — only the
- * screenshots come from the extension repo, and they get retaken there.
- * Copies are committed so the site deploys independently of the chrome repo.
+ * Syncs product screenshots from the sibling extension repo (`../chrome`) and
+ * derives the two sizes the site actually serves: a 1280w webp for the featured
+ * frame and a 480w webp for the thumb strip. The source PNGs are ~700KB each —
+ * shipping four of them twice over would be most of the page's weight.
+ *
+ * The comet-tab mark's site geometry lives in src/components/CometMark.tsx; the
+ * social card is generated locally (scripts/gen-og.ts). Derivatives are
+ * committed so the site deploys without this script or the chrome repo.
+ *
+ *   bun run sync   (needs cwebp — `brew install webp`)
  */
-import { cpSync, mkdirSync, readdirSync } from "node:fs";
+import { execFileSync } from "node:child_process";
+import { mkdirSync, readdirSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const siteRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
-const chromeRoot = join(siteRoot, "..", "chrome");
-
-const copies: Array<{ from: string; to: string }> = [];
-
-const screenshotsFrom = join(chromeRoot, "docs", "screenshots");
+const screenshotsFrom = join(siteRoot, "..", "chrome", "docs", "screenshots");
 const screenshotsTo = join(siteRoot, "public", "screenshots");
-mkdirSync(screenshotsTo, { recursive: true });
-for (const file of readdirSync(screenshotsFrom)) {
-  if (file.endsWith(".png")) {
-    copies.push({ from: join(screenshotsFrom, file), to: join(screenshotsTo, file) });
-  }
-}
 
-for (const { from, to } of copies) {
-  cpSync(from, to);
-  console.log(`synced ${from} -> ${to}`);
+mkdirSync(screenshotsTo, { recursive: true });
+
+const kb = (path: string) => Math.round(statSync(path).size / 1024);
+
+for (const file of readdirSync(screenshotsFrom).sort()) {
+  if (!file.endsWith(".png")) continue;
+  const from = join(screenshotsFrom, file);
+  const base = file.replace(/\.png$/, "");
+  const full = join(screenshotsTo, `${base}.webp`);
+  const small = join(screenshotsTo, `${base}-sm.webp`);
+
+  execFileSync("cwebp", ["-quiet", "-q", "82", "-resize", "1280", "0", from, "-o", full]);
+  execFileSync("cwebp", ["-quiet", "-q", "78", "-resize", "480", "0", from, "-o", small]);
+  console.log(`${file} (${kb(from)}KB) -> ${base}.webp ${kb(full)}KB · ${base}-sm.webp ${kb(small)}KB`);
 }

@@ -35,7 +35,7 @@ export function App() {
     <>
       <CometField />
       <Nav />
-      <main>
+      <main id="main">
         <Hero />
         <Features />
         <Screenshots />

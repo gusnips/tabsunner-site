@@ -1,22 +1,41 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import {
+  CYCLE_MS,
+  DONE_AT,
+  PLAN_AT,
+  TOOL_AT,
+  formatElapsed,
+  phaseAt,
+  stepStateAt,
+  tokensAt,
+} from "./runPhase";
 
 /**
  * A simulated agent run, Claude Code-style: plan, tool calls, live elapsed
  * time and token spend. Labelled as a demo — it proves the interface, not a
- * fake result. One clock drives everything; reduced motion gets the finished
- * state, which is still the honest summary of a run.
+ * fake result. One clock drives everything (see runPhase.ts); reduced motion
+ * gets the finished state, which is still the honest summary of a run.
  */
 
-const CYCLE_MS = 12_000;
-const PLAN_AT = 1_400;
-const STEP_DONE_AT = [2_600, 4_200, 5_800, 9_200];
-const TOOL_AT = [2_600, 4_200, 5_800];
-const COMPOSING_AT = 7_400;
-const DONE_AT = 9_200;
-
-function formatElapsed(ms: number): string {
-  return `${(ms / 1000).toFixed(1)}s`;
+/** Step markers — authored SVG, not unicode glyphs (DESIGN.md). */
+function StepMark({ state }: { state: "done" | "active" | "pending" }) {
+  return (
+    <svg
+      viewBox="0 0 16 16"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="size-3.5 shrink-0"
+      aria-hidden="true"
+    >
+      {state === "done" && <path d="m3.5 8.5 3 3 6-7" />}
+      {state === "active" && <path d="m6.5 4.5 4 3.5-4 3.5" />}
+      {state === "pending" && <circle cx="8" cy="8" r="1.25" fill="currentColor" stroke="none" />}
+    </svg>
+  );
 }
 
 export function RunConsole() {
@@ -44,10 +63,9 @@ export function RunConsole() {
     };
   }, []);
 
-  const done = tick >= DONE_AT;
-  const composing = tick >= COMPOSING_AT && !done;
-  const planning = tick >= PLAN_AT - 200 && tick < PLAN_AT;
-  const tokens = Math.min(3_840, Math.floor(tick / 50) * 24);
+  const phase = phaseAt(tick);
+  const done = phase.kind === "done";
+  const tokens = tokensAt(tick);
 
   return (
     <div
@@ -77,14 +95,15 @@ export function RunConsole() {
       <div className="space-y-4 px-5 py-4">
         {/* status line */}
         <p className="font-mono text-sm">
-          {planning && <span className="shimmer-text">{t("run.planning")}</span>}
-          {composing && <span className="shimmer-text">{t("run.composing")}</span>}
-          {done && <span className="text-ion-300">{t("run.done")}</span>}
-          {!planning && !composing && !done && (
+          {phase.kind === "done" ? (
+            <span className="text-ion-300">{t("run.done")}</span>
+          ) : (
             <span className="shimmer-text">
-              {plan[
-                STEP_DONE_AT.findIndex((at) => tick < at)
-              ]?.toLowerCase() ?? t("run.planning")}
+              {phase.kind === "planning"
+                ? t("run.planning")
+                : phase.kind === "composing"
+                  ? t("run.composing")
+                  : plan[phase.index]}
             </span>
           )}
         </p>
@@ -97,17 +116,29 @@ export function RunConsole() {
             </p>
             <ol className="mt-1.5 space-y-1">
               {plan.map((step, i) => {
-                const isDone = tick >= STEP_DONE_AT[i];
-                const isActive = !isDone && (i === 0 || tick >= STEP_DONE_AT[i - 1]);
+                const state = stepStateAt(tick, i);
                 return (
                   <li key={step} className="flex items-center gap-2 text-sm">
                     <span
-                      aria-hidden="true"
-                      className={`font-mono text-xs ${isDone ? "text-ion-400" : isActive ? "text-tel-400" : "text-star-500"}`}
+                      className={
+                        state === "done"
+                          ? "text-ion-400"
+                          : state === "active"
+                            ? "text-tel-400"
+                            : "text-star-500"
+                      }
                     >
-                      {isDone ? "✓" : isActive ? "▸" : "·"}
+                      <StepMark state={state} />
                     </span>
-                    <span className={isDone ? "text-star-500 line-through" : isActive ? "text-star-100" : "text-star-500"}>
+                    <span
+                      className={
+                        state === "done"
+                          ? "text-star-500 line-through"
+                          : state === "active"
+                            ? "text-star-100"
+                            : "text-star-500"
+                      }
+                    >
                       {step}
                     </span>
                   </li>

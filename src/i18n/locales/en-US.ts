@@ -11,6 +11,8 @@ export const enUS = {
     download: "Download",
     github: "GitHub",
     languageLabel: "Language",
+    sectionsLabel: "Sections",
+    skipToContent: "Skip to content",
   },
   hero: {
     titleA: "You give the goal.",
@@ -26,8 +28,8 @@ export const enUS = {
       "Fill this form with my work details…",
       "Archive every newsletter from last week…",
     ],
-    demoNote:
-      "That comet is the idea in miniature — install TabRunner and the run happens in your real browser.",
+    demoHint: "Launch one — it sends a comet across the sky, and nothing else. The real run needs the extension.",
+    demoLaunched: "That comet is the idea in miniature. Installed, it runs the task in your real browser.",
     browsersLabel: "Runs on",
     chromiumNote:
       "Chromium only. Firefox and Safari have no trusted-input API, so they get an explanation, not a dead button.",
@@ -65,7 +67,7 @@ export const enUS = {
       },
       {
         title: "Sees the page, not the HTML",
-        body: 'The model reads a compact accessibility tree — [ref=e12] button "Submit" — never raw markup. Small prompts, stable refs, and passwords or card numbers never leave the page.',
+        body: "The model reads a compact accessibility tree, never raw markup — small prompts, stable refs, and passwords or card numbers that never leave the page.",
       },
       {
         title: "Guardrails that hold",

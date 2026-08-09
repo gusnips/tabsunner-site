@@ -13,6 +13,7 @@ export function Hero() {
   const { t } = useTranslation();
   const placeholders = t("hero.placeholders", { returnObjects: true }) as string[];
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
+  const [launched, setLaunched] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
@@ -29,6 +30,7 @@ export function Hero() {
       rect ? { x: rect.left + rect.width * 0.75, y: rect.top + rect.height / 2 } : undefined,
     );
     setPlaceholderIndex((i) => (i + 1) % placeholders.length);
+    setLaunched(true);
   };
 
   return (
@@ -78,7 +80,26 @@ export function Hero() {
               </svg>
             </button>
           </form>
-          <p className="mt-3 max-w-[56ch] text-sm text-star-500">{t("hero.demoNote")}</p>
+          {/*
+           * The mission line is a gesture, not a product surface — so once it
+           * fires it says what just happened and points at the way to the real
+           * thing, rather than swallowing the task silently.
+           */}
+          <p className="mt-3 max-w-[56ch] text-sm text-star-500" aria-live="polite">
+            {launched ? (
+              <>
+                {t("hero.demoLaunched")}{" "}
+                <a
+                  href="#install"
+                  className="font-semibold text-ion-300 underline decoration-ion-500/40 underline-offset-4 transition-colors hover:text-ion-200"
+                >
+                  {t("hero.ctaSecondary")}
+                </a>
+              </>
+            ) : (
+              t("hero.demoHint")
+            )}
+          </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
