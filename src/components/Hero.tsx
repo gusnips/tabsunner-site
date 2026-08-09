@@ -11,6 +11,8 @@ import { RunConsole } from "./RunConsole";
  * primary action (Download) sits under the pitch, glow and all, and names the
  * visitor's own browser when it can; a non-Chromium visitor gets the truth in
  * words instead of a button that would never work (the DESIGN.md rule).
+ * The ZIP has to be loaded unpacked to do anything, so downloading it also
+ * moves the page to the flight plan rather than leaving a file with no next step.
  */
 export function Hero() {
   const { t } = useTranslation();
@@ -122,7 +124,10 @@ export function Hero() {
               </p>
             ) : (
               <a
-                href={LINKS.crx}
+                href={LINKS.zip}
+                onClick={() => {
+                  window.location.hash = "#install";
+                }}
                 className="inline-flex items-center gap-2 rounded-full bg-flare-500 px-6 py-3 font-semibold text-field-950 shadow-[0_0_32px_-4px] shadow-flare-500/50 transition-all hover:bg-flare-400 hover:shadow-flare-400/60"
               >
                 <svg

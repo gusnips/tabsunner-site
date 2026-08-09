@@ -6,7 +6,7 @@ export function Footer() {
   const { t } = useTranslation();
 
   const productLinks = [
-    { label: t("footer.download"), href: LINKS.crx },
+    { label: t("footer.download"), href: LINKS.zip },
     { label: t("install.releaseNotes"), href: LINKS.releases },
   ];
   // The store listing is in review: plain text until it's live, never a dead link.

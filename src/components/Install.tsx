@@ -5,6 +5,8 @@ import { LINKS } from "../lib/links";
  * The flight plan — install steps as a launch sequence, caveats said plainly
  * beside them. Only stable `releases/latest` URLs are linked; no version
  * numbers anywhere (the download contract in chrome/docs/website-brief.md).
+ * One path only: Chrome rejects sideloaded CRX files, so the ZIP loaded
+ * unpacked is the install until the store listing is live.
  */
 export function Install() {
   const { t } = useTranslation();
@@ -24,9 +26,9 @@ export function Install() {
         {/* launch sequence */}
         <div className="flex h-full min-w-0 flex-col rounded-2xl border border-field-500/60 bg-field-800/60 p-6 backdrop-blur-sm sm:p-8">
           <div className="flex items-center gap-3">
-            <h3 className="text-lg font-semibold text-star-100">{t("install.crxTitle")}</h3>
+            <h3 className="text-lg font-semibold text-star-100">{t("install.loadTitle")}</h3>
             <span className="rounded-full bg-flare-500/15 px-2.5 py-0.5 font-mono text-[10px] tracking-wider text-flare-300 uppercase">
-              {t("install.crxBadge")}
+              {t("install.badge")}
             </span>
           </div>
 
@@ -50,10 +52,10 @@ export function Install() {
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
-              href={LINKS.crx}
+              href={LINKS.zip}
               className="inline-flex items-center gap-2 rounded-full bg-flare-500 px-6 py-3 font-semibold text-field-950 shadow-[0_0_32px_-4px] shadow-flare-500/50 transition-all hover:bg-flare-400 hover:shadow-flare-400/60"
             >
-              {t("install.downloadCrx")}
+              {t("install.download")}
             </a>
             <a
               href={LINKS.releases}
@@ -65,23 +67,10 @@ export function Install() {
             </a>
           </div>
 
-          <details className="mt-6 rounded-xl border border-field-600/60 bg-field-900/50 open:border-field-500">
-            <summary className="cursor-pointer px-4 py-3 text-sm font-semibold text-star-100 transition-colors hover:text-flare-300">
-              {t("install.zipTitle")}
-            </summary>
-            <div className="border-t border-field-600/60 px-4 py-3">
-              <p className="text-sm leading-relaxed text-star-300">{t("install.zipSteps")}</p>
-              <a
-                href={LINKS.zip}
-                className="mt-3 inline-block text-sm font-semibold text-flare-300 underline decoration-flare-500/40 underline-offset-4 hover:text-flare-200"
-              >
-                {t("install.downloadZip")}
-              </a>
-            </div>
-          </details>
-
           {/* prose, so not mono — see DESIGN.md's Measurement Rule */}
-          <p className="mt-5 text-xs leading-relaxed text-star-500">{t("install.storeNote")}</p>
+          <p className="mt-auto pt-8 text-xs leading-relaxed text-star-500">
+            {t("install.storeNote")}
+          </p>
         </div>
 
         {/* caveats — said plainly */}

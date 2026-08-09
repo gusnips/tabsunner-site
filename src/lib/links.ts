@@ -3,7 +3,12 @@
  * hotlink only these stable URLs — never hardcode a version number anywhere.
  */
 export const LINKS = {
-  crx: "https://github.com/gusnips/tabrunner/releases/latest/download/tabrunner-latest.crx",
+  /**
+   * Primary download. The signed CRX is still a release asset, but Chrome
+   * refuses drag-and-drop CRX installs without a Web Store publisher proof
+   * (CRX_REQUIRED_PROOF_MISSING) — so the unpacked ZIP is the only self-hosted
+   * install that works. When the listing clears review, `store` takes over.
+   */
   zip: "https://github.com/gusnips/tabrunner/releases/latest/download/tabrunner-latest-chrome.zip",
   releases: "https://github.com/gusnips/tabrunner/releases/latest",
   repo: "https://github.com/gusnips/tabrunner",

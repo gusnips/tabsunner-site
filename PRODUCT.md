@@ -38,9 +38,10 @@ Two claims a neighboring product cannot copy:
 
 - Distribution: GitHub Releases (`gusnips/tabrunner`) until the Chrome Web Store listing is
   approved (v0.1.0 withdrawn for resubmission with a new permission; store ID assigned:
-  `gkblgkcofolbpcbafkdhiihfbpjhdpgh`). Primary CTA today is the signed CRX download; store link
-  flips to primary once approved. The site must **never hardcode a version number** — only
-  `releases/latest` aliases.
+  `gkblgkcofolbpcbafkdhiihfbpjhdpgh`). Primary CTA today is the zip, loaded unpacked — Chrome
+  refuses sideloaded CRX installs without a Web Store proof, so the CRX asset is unlinked; the
+  store link flips to primary once approved. The site must **never hardcode a version number** —
+  only `releases/latest` aliases.
 - Also drivable over MCP from Claude Code/Desktop or any MCP client (local daemon bridge).
 - Chromium-only by design: Chrome, Brave, Edge, Arc, Opera, Vivaldi. Firefox/Safari have no
   `chrome.debugger` equivalent — say so, don't offer dead buttons.
@@ -50,9 +51,9 @@ Two claims a neighboring product cannot copy:
 
 - Site stack: Vite + React 19 + Tailwind CSS 4 + bun, static, deployed on its own cadence.
 - Hard requirements from `chrome/docs/website-brief.md`: hotlink only the three stable release
-  URLs (`tabrunner-latest.crx`, `tabrunner-latest-chrome.zip`, `releases/latest`); state the CRX
-  caveats plainly (not-from-store warning, separate extension ID from the future store item, no
-  auto-update); present the zip as fallback; link the privacy doc
+  URLs (`tabrunner-latest.crx`, `tabrunner-latest-chrome.zip`, `releases/latest`); state the
+  sideload caveats plainly (developer-mode warning, folder must stay put, separate extension ID
+  from the future store item, no auto-update); link the privacy doc
   (`github.com/gusnips/tabrunner/blob/main/PRIVACY.md`) up front — an agent that drives your
   logged-in browser must answer the data question immediately.
 
@@ -86,6 +87,6 @@ Two claims a neighboring product cannot copy:
 ## Product Principles
 
 1. Prove, don't claim — show the real product working; the privacy answer comes first, not last.
-2. Honest distribution — install instructions state every caveat a sideloaded CRX carries.
+2. Honest distribution — install instructions state every caveat a sideloaded build carries.
 3. No dark patterns of omission — Chromium-only is stated, not hidden behind dead buttons.
 4. Playful but credible — the comet energy serves developers who read footnotes.

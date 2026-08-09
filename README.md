@@ -47,12 +47,15 @@ these three stable URLs:
 
 | What | URL |
 | --- | --- |
-| Signed CRX (primary CTA) | `releases/latest/download/tabrunner-latest.crx` |
-| Zip fallback | `releases/latest/download/tabrunner-latest-chrome.zip` |
+| Zip, loaded unpacked (primary CTA) | `releases/latest/download/tabrunner-latest-chrome.zip` |
+| Signed CRX (**not linked** — see below) | `releases/latest/download/tabrunner-latest.crx` |
 | Release notes | `releases/latest` |
 
-The Chrome Web Store listing is in review. Until it is approved the store link is plain text,
-not a dead button; when it lands, it becomes the primary CTA and the CRX becomes the fallback.
+**The CRX is not installable by drag-and-drop.** Chrome rejects any sideloaded CRX without a
+Web Store publisher proof (`CRX_REQUIRED_PROOF_MISSING`), so the site links the zip only and
+says in the caveats that the release asset won't install that way. Store approval does not
+change this — a GitHub-hosted CRX stays unusable — so the flip when the listing lands is
+**zip → store link**, not zip → CRX. Until then the store link is plain text, not a dead button.
 
 ## Assets
 

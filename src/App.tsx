@@ -11,7 +11,7 @@
  * STORY: a visitor sees a task enter the mission line, a comet leave it, and
  * a (labelled, simulated) run tick beside them — they understand in seconds
  * that an AI drives *their* browser, visibly, under their control — and they
- * download the CRX.
+ * download the build.
  * FIRST VIEWPORT: the page's own browser-chrome bar (comet favicon, omnibox,
  * glowing Download action); headline left with mission line and CTAs; live
  * run console right; comet field canvas behind everything.
