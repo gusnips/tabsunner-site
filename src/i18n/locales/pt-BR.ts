@@ -1,0 +1,153 @@
+import type { Locale } from "./en-US";
+
+/** Português (Brasil) */
+export const ptBR: Locale = {
+  langName: "Português (Brasil)",
+  nav: {
+    features: "Recursos",
+    install: "Instalar",
+    privacy: "Privacidade",
+    download: "Baixar",
+    github: "GitHub",
+    languageLabel: "Idioma",
+  },
+  hero: {
+    titleA: "Você dá o objetivo.",
+    titleB: "Ele roda as abas.",
+    sub: "Um agente de IA que dirige seu navegador de verdade — suas abas, suas sessões, suas contas logadas — com qualquer provedor que você escolher. Descreva uma tarefa no painel lateral; o TabRunner lê páginas, clica, digita e navega até o trabalho estar pronto.",
+    ctaPrimary: "Baixar para Chromium",
+    ctaSecondary: "Como instalar",
+    missionLabel: "Descreva uma tarefa",
+    missionGo: "Lançar",
+    placeholders: [
+      "Resuma os 3 últimos e-mails não lidos…",
+      "Ache um voo mais barato para Tóquio e segure…",
+      "Preencha este formulário com meus dados de trabalho…",
+      "Arquive todas as newsletters da semana passada…",
+    ],
+    demoNote:
+      "O cometa é a ideia em miniatura — instale o TabRunner e a execução acontece no seu navegador de verdade.",
+    browsersLabel: "Roda no",
+    chromiumNote:
+      "Só Chromium. Firefox e Safari não têm a API de entrada confiável, então eles ganham uma explicação, não um botão morto.",
+  },
+  run: {
+    demoBadge: "demonstração simulada",
+    taskLabel: "Tarefa",
+    task: "Resuma os 3 últimos e-mails não lidos da minha caixa de entrada",
+    planning: "Planejando…",
+    planTitle: "Plano",
+    plan: [
+      "Abrir a caixa de entrada",
+      "Filtrar não lidos",
+      "Ler as 3 primeiras conversas",
+      "Escrever o resumo",
+    ],
+    tools: [
+      { tool: "navigate", detail: "caixa de entrada do webmail" },
+      { tool: "click", detail: 'ref=e21 "Não lidos"' },
+      { tool: "snapshot", detail: "3 conversas, 2 anexos" },
+    ],
+    composing: "Escrevendo o resumo…",
+    done: "Pronto — resumo entregue no chat",
+    elapsed: "decorrido",
+    tokens: "tokens",
+    stopNote: "Esc para qualquer execução de verdade — inclusive esta, se fosse real.",
+  },
+  features: {
+    title: "Seu navegador é a vantagem",
+    sub: "A maioria dos agentes de navegador roda num navegador isolado e deslogado. O TabRunner roda no seu — então ele age nos sites em que você está logado de verdade.",
+    providersMore: "+ qualquer endpoint compatível com OpenAI/Anthropic",
+    items: [
+      {
+        title: "Traga seu provedor",
+        body: "15 predefinições: entre com a assinatura da Anthropic, OpenAI ou Kimi que você já paga, ou cole uma chave de API dos provedores abaixo — mais qualquer endpoint compatível com o formato OpenAI ou Anthropic. Sem lock-in, sem intermediário.",
+      },
+      {
+        title: "Entrada confiável de verdade",
+        body: "Cliques e teclas passam pelo Chrome DevTools Protocol — eventos confiáveis genuínos, não dispatches sintéticos de JS que telas de login e de pagamento ignoram.",
+      },
+      {
+        title: "Vê a página, não o HTML",
+        body: 'O modelo lê uma árvore de acessibilidade compacta — [ref=e12] button "Enviar" — nunca o HTML bruto. Prompts pequenos, refs estáveis, e senhas ou números de cartão nunca saem da página.',
+      },
+      {
+        title: "Guarda-corpos que aguentam",
+        body: "Ações consequentes — pagar, enviar, apagar — pedem sua confirmação antes. Retentativas absorvem falhas do provedor, um limite de passos contém descontrole, e o Parar realmente para.",
+      },
+      {
+        title: "Dirigível via MCP",
+        body: "Claude Code, Claude Desktop ou qualquer cliente MCP pode entregar uma tarefa ao TabRunner e acompanhá-la até a resposta — mesmo navegador, mesmos logins, etiquetado no seu histórico.",
+      },
+      {
+        title: "Sem servidor. Nenhum.",
+        body: "Sua chave vai direto da extensão para o seu provedor. Configurações e histórico ficam no chrome.storage do seu dispositivo. Sem conta, sem telemetria, nada para vazar.",
+      },
+    ],
+  },
+  shots: {
+    title: "O painel é o produto",
+    sub: "Não é uma tomada do navegador — é um painel lateral que trabalha junto com a página em que você está.",
+    captions: [
+      "O painel lateral, antes de uma tarefa",
+      "No meio da execução: o plano, os passos, a página",
+      "Provedores: predefinições ou qualquer endpoint compatível",
+      "Outro chat, respondendo no seu idioma",
+    ],
+    note: "Capturas da build atual, ainda no roxo antigo e com a marca “Regent” de antes da renomeação — novas capturas nesta paleta chegam com o redesign da extensão.",
+  },
+  install: {
+    title: "O plano de voo",
+    sub: "Dois minutos, três passos, sem conta. Até a listagem da Chrome Web Store sair da revisão, este é o caminho de entrada.",
+    crxBadge: "recomendado",
+    crxTitle: "Instale o CRX assinado",
+    steps: [
+      "Baixe o .crx — sempre a build mais recente; este link nunca muda.",
+      "Abra chrome://extensions e ative o Modo de desenvolvedor (canto superior direito).",
+      "Arraste o .crx para essa página e confirme, depois clique no cometa na sua barra de ferramentas.",
+    ],
+    downloadCrx: "Baixar .crx",
+    caveatsTitle: "Dito com clareza",
+    caveats: [
+      'O Chrome vai dizer que a extensão "não é da Chrome Web Store" — esperado para um CRX autoassinado.',
+      "Sem atualização automática: versões novas são um novo download pelo mesmo link (é por isso que ele nunca muda).",
+      "Quando a versão da loja sair, ela instala como uma extensão separada (chave de assinatura diferente) — remova a sideloaded depois de migrar; as configurações não migram.",
+    ],
+    zipTitle: "Prefere o zip?",
+    zipSteps:
+      "Baixe e descompacte, depois chrome://extensions → Modo de desenvolvedor → Carregar sem compactação → selecione a pasta descompactada.",
+    downloadZip: "Baixar .zip",
+    releaseNotes: "Notas de versão",
+    storeNote:
+      "A listagem da Chrome Web Store está em revisão — a instalação em um clique chega aqui quando for aprovada.",
+  },
+  privacy: {
+    title: "Sem estação terrestre",
+    sub: "Um agente que dirige seu navegador logado precisa responder primeiro à pergunta sobre dados. Aqui está a resposta.",
+    points: [
+      "Os dados vão para exatamente dois lugares: o site em que o agente está trabalhando e o provedor de IA que você configurou.",
+      "Não existe servidor do TabRunner, nem conta, nem analytics, nem chamadas a terceiros.",
+      "Configurações de provedor e histórico de conversas ficam no chrome.storage, no seu dispositivo.",
+    ],
+    diagramBrowser: "Seu navegador",
+    diagramProvider: "Seu provedor de IA",
+    diagramSites: "Os sites que você usa",
+    diagramKeyFlow: "chave de API ou login — direto",
+    diagramTaskFlow: "cliques e teclas",
+    diagramServer: "servidor TabRunner",
+    diagramServerNone: "não existe",
+    link: "Leia a política de privacidade completa",
+  },
+  footer: {
+    tagline: "Você dá o objetivo. Ele roda as abas.",
+    chromium: "Só Chromium — Chrome, Brave, Edge, Arc, Opera, Vivaldi.",
+    license: "Código aberto, licença MIT.",
+    productHeading: "Produto",
+    projectHeading: "Projeto",
+    download: "Baixar",
+    storeSoon: "Chrome Web Store — em revisão",
+    issues: "Problemas",
+    privacyLink: "Política de privacidade",
+    mcpDocs: "Docs do MCP",
+  },
+};

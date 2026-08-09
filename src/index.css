@@ -1,0 +1,136 @@
+@import "tailwindcss";
+@import "@fontsource-variable/unbounded";
+@import "@fontsource-variable/figtree";
+@import "@fontsource-variable/jetbrains-mono";
+
+/*
+ * tabrunner.app — "The Comet Field" (see DESIGN.md).
+ * Two lights only: ion cyan = motion, telemetry amber = measurement.
+ */
+@theme {
+  /* Deep Field — the night sky, indigo-leaning, never pure black */
+  --color-field-950: #04060d;
+  --color-field-900: #070b16;
+  --color-field-800: #0b1224;
+  --color-field-700: #111a33;
+  --color-field-600: #1a2547;
+  --color-field-500: #25325c;
+
+  /* Ion — comet tail cyan; the color of things that move */
+  --color-ion-200: #cffafe;
+  --color-ion-300: #a5f3fc;
+  --color-ion-400: #67e8f9;
+  --color-ion-500: #22d3ee;
+  --color-ion-600: #06b6d4;
+  --color-ion-700: #0e7490;
+
+  /* Telemetry — amber measures; if it's amber, the agent is working */
+  --color-tel-300: #fcd34d;
+  --color-tel-400: #fbbf24;
+  --color-tel-500: #f59e0b;
+
+  /* Starlight — text, tinted from the sky, never pure gray */
+  --color-star-100: #e8eefb;
+  --color-star-300: #b9c6de;
+  --color-star-500: #8797ba;
+
+  --font-display: "Unbounded Variable", "Figtree Variable", system-ui, sans-serif;
+  --font-sans: "Figtree Variable", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-field-900 font-sans text-star-100 antialiased;
+}
+
+::selection {
+  background: var(--color-ion-500);
+  color: var(--color-field-950);
+}
+
+/* Telemetry numerals never jitter while ticking. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/*
+ * Live pulse — the one dot that says "working". Amber, because it measures.
+ */
+@keyframes tel-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-tel-400) 55%, transparent);
+  }
+  50% {
+    opacity: 0.75;
+    box-shadow: 0 0 0 6px transparent;
+  }
+}
+.live-dot {
+  animation: tel-pulse 1.6s ease-in-out infinite;
+}
+
+/*
+ * Status-verb shimmer (adapted from the extension's shimmer-text): a run can sit
+ * between visible changes; a moving highlight is the honest "still working" signal.
+ */
+@keyframes ion-shimmer {
+  from {
+    background-position: 150% center;
+  }
+  to {
+    background-position: -50% center;
+  }
+}
+.shimmer-text {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-tel-400) 30%,
+    var(--color-ion-200) 50%,
+    var(--color-tel-400) 70%
+  );
+  background-size: 250% auto;
+  background-clip: text;
+  color: transparent;
+  animation: ion-shimmer 2.4s linear infinite;
+}
+
+/* Entrance — sections rise out of the field once, already-visible default. */
+@keyframes field-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+.field-rise {
+  animation: field-rise 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .live-dot,
+  .shimmer-text,
+  .field-rise {
+    animation: none;
+  }
+  .shimmer-text {
+    color: var(--color-tel-400);
+  }
+}

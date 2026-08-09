@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "tabrunner": {
+      "command": "bun",
+      "args": ["/Users/gus/dev/tabrunner/chrome/daemon/src/index.ts"]
+    }
+  }
+}

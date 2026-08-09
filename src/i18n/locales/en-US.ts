@@ -1,0 +1,150 @@
+/**
+ * English (en-US) — the reference locale. Other locales must satisfy `Locale`.
+ * Voice: direct, technically honest, zero hype (see PRODUCT.md).
+ */
+export const enUS = {
+  langName: "English",
+  nav: {
+    features: "Features",
+    install: "Install",
+    privacy: "Privacy",
+    download: "Download",
+    github: "GitHub",
+    languageLabel: "Language",
+  },
+  hero: {
+    titleA: "You give the goal.",
+    titleB: "It runs the tabs.",
+    sub: "An AI agent that drives your real browser — your tabs, your sessions, your logged-in accounts — through any provider you choose. Describe a task in the side panel; TabRunner reads pages, clicks, types and navigates until the job is done.",
+    ctaPrimary: "Download for Chromium",
+    ctaSecondary: "How to install",
+    missionLabel: "Describe a task",
+    missionGo: "Launch",
+    placeholders: [
+      "Summarize the last 3 unread emails…",
+      "Find a cheaper flight to Tokyo and hold it…",
+      "Fill this form with my work details…",
+      "Archive every newsletter from last week…",
+    ],
+    demoNote:
+      "That comet is the idea in miniature — install TabRunner and the run happens in your real browser.",
+    browsersLabel: "Runs on",
+    chromiumNote:
+      "Chromium only. Firefox and Safari have no trusted-input API, so they get an explanation, not a dead button.",
+  },
+  run: {
+    demoBadge: "simulated demo",
+    taskLabel: "Task",
+    task: "Summarize the last 3 unread emails in my inbox",
+    planning: "Planning…",
+    planTitle: "Plan",
+    plan: ["Open the inbox", "Filter to unread", "Read the top 3 threads", "Write the summary"],
+    tools: [
+      { tool: "navigate", detail: "webmail inbox" },
+      { tool: "click", detail: 'ref=e21 "Unread"' },
+      { tool: "snapshot", detail: "3 threads, 2 attachments" },
+    ],
+    composing: "Writing the summary…",
+    done: "Done — summary delivered in chat",
+    elapsed: "elapsed",
+    tokens: "tokens",
+    stopNote: "Esc stops any run for real — this one included, if it were real.",
+  },
+  features: {
+    title: "Your browser is the advantage",
+    sub: "Most browser agents run in a sandboxed, logged-out browser. TabRunner runs in yours — so it can act on the sites you're actually logged into.",
+    providersMore: "+ any OpenAI/Anthropic-compatible endpoint",
+    items: [
+      {
+        title: "Bring your own provider",
+        body: "15 presets: sign in with the Anthropic, OpenAI or Kimi subscription you already pay for, or paste an API key for the providers below — plus any endpoint speaking the OpenAI or Anthropic wire format. No lock-in, no relay.",
+      },
+      {
+        title: "Real trusted input",
+        body: "Clicks and keystrokes go through the Chrome DevTools Protocol — genuine trusted events, not synthetic JS dispatches that login forms and payment fields ignore.",
+      },
+      {
+        title: "Sees the page, not the HTML",
+        body: 'The model reads a compact accessibility tree — [ref=e12] button "Submit" — never raw markup. Small prompts, stable refs, and passwords or card numbers never leave the page.',
+      },
+      {
+        title: "Guardrails that hold",
+        body: "Consequential actions — paying, sending, deleting — ask for your confirmation first. Retries ride out provider hiccups, a step budget caps runaways, and Stop actually stops.",
+      },
+      {
+        title: "Drivable over MCP",
+        body: "Claude Code, Claude Desktop or any MCP client can hand TabRunner a task and follow it to the answer — same browser, same logins, labelled in your history.",
+      },
+      {
+        title: "No server. At all.",
+        body: "Your key goes straight from the extension to your provider. Configs and history live in chrome.storage on your device. No account, no telemetry, nothing to breach.",
+      },
+    ],
+  },
+  shots: {
+    title: "The panel is the product",
+    sub: "Not a browser takeover — a side panel that works alongside the page you're on.",
+    captions: [
+      "The side panel, before a task",
+      "Mid-run: the plan, the steps, the page",
+      "Providers: presets or any compatible endpoint",
+      "A second chat, answering in your language",
+    ],
+    note: "Screenshots from the current build, still wearing the old purple and the pre-rename “Regent” mark — retakes in this palette land with the extension's redesign.",
+  },
+  install: {
+    title: "The flight plan",
+    sub: "Two minutes, three steps, no account. Until the Chrome Web Store listing clears review, this is the way in.",
+    crxBadge: "recommended",
+    crxTitle: "Install the signed CRX",
+    steps: [
+      "Download the .crx — always the latest build; this link never changes.",
+      "Open chrome://extensions and switch on Developer mode (top-right toggle).",
+      "Drag the .crx onto that page and confirm, then click the comet in your toolbar.",
+    ],
+    downloadCrx: "Download .crx",
+    caveatsTitle: "Said plainly",
+    caveats: [
+      'Chrome will say the extension "is not from the Chrome Web Store" — expected for a self-signed CRX.',
+      "No auto-update: new versions are a manual re-download from this same link (which is why it never changes).",
+      "When the store listing ships, it installs as a separate extension (different signing key) — remove the sideloaded one after migrating; settings don't carry over.",
+    ],
+    zipTitle: "Prefer the zip?",
+    zipSteps:
+      "Download and unzip, then chrome://extensions → Developer mode → Load unpacked → select the unzipped folder.",
+    downloadZip: "Download .zip",
+    releaseNotes: "Release notes",
+    storeNote: "The Chrome Web Store listing is in review — one-click install lands here once approved.",
+  },
+  privacy: {
+    title: "No ground station",
+    sub: "An agent that drives your logged-in browser has to answer the data question first. Here it is.",
+    points: [
+      "Data goes to exactly two places: the site the agent is working on, and the AI provider you configured.",
+      "There is no TabRunner server, no account, no analytics, no third-party calls.",
+      "Provider configs and conversation history live in chrome.storage, on your device.",
+    ],
+    diagramBrowser: "Your browser",
+    diagramProvider: "Your AI provider",
+    diagramSites: "The sites you use",
+    diagramKeyFlow: "API key or sign-in — direct",
+    diagramTaskFlow: "clicks & keystrokes",
+    diagramServer: "TabRunner server",
+    diagramServerNone: "doesn't exist",
+    link: "Read the full privacy policy",
+  },
+  footer: {
+    tagline: "You give the goal. It runs the tabs.",
+    chromium: "Chromium only — Chrome, Brave, Edge, Arc, Opera, Vivaldi.",
+    license: "Open source, MIT license.",
+    productHeading: "Product",
+    projectHeading: "Project",
+    download: "Download",
+    storeSoon: "Chrome Web Store — in review",
+    issues: "Issues",
+    privacyLink: "Privacy policy",
+    mcpDocs: "MCP docs",
+  },
+};
+
+export type Locale = typeof enUS;
