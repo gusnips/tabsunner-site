@@ -161,6 +161,7 @@ export const enUS = {
     storeSoon: "Chrome Web Store — in review",
     issues: "Issues",
     privacyLink: "Privacy policy",
+    termsLink: "Terms of use",
     mcpDocs: "MCP docs",
   },
 };

@@ -168,6 +168,7 @@ export const ptBR: Locale = {
     storeSoon: "Chrome Web Store — em revisão",
     issues: "Problemas",
     privacyLink: "Política de privacidade",
+    termsLink: "Termos de uso",
     mcpDocs: "Docs do MCP",
   },
 };

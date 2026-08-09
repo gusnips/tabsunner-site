@@ -168,6 +168,7 @@ export const esES: Locale = {
     storeSoon: "Chrome Web Store — en revisión",
     issues: "Incidencias",
     privacyLink: "Política de privacidad",
+    termsLink: "Términos de uso",
     mcpDocs: "Docs de MCP",
   },
 };

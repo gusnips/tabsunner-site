@@ -15,6 +15,7 @@ export function Footer() {
     { label: "GitHub", href: LINKS.repo },
     { label: t("footer.issues"), href: LINKS.issues },
     { label: t("footer.privacyLink"), href: LINKS.privacy },
+    { label: t("footer.termsLink"), href: LINKS.terms },
     { label: t("footer.mcpDocs"), href: LINKS.mcpDocs },
   ];
 
