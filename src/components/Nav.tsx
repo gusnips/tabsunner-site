@@ -20,12 +20,12 @@ export function Nav() {
     <header className="sticky top-0 z-20 border-b border-field-600/50 bg-field-900/80 backdrop-blur-md">
       <a
         href="#main"
-        className="sr-only rounded-full bg-ion-500 px-4 py-2 font-semibold text-field-950 focus:not-sr-only focus:absolute focus:top-2 focus:left-4 focus:z-30"
+        className="sr-only rounded-full bg-flare-500 px-4 py-2 font-semibold text-field-950 focus:not-sr-only focus:absolute focus:top-2 focus:left-4 focus:z-30"
       >
         {t("nav.skipToContent")}
       </a>
       <div className="mx-auto flex h-14 max-w-6xl items-center gap-4 px-4 sm:px-6">
-        <a href="#top" className="flex shrink-0 items-center gap-2.5 text-ion-400">
+        <a href="#top" className="flex shrink-0 items-center gap-2.5 text-flare-400">
           <CometMark size={26} />
           <span className="font-display text-sm font-semibold tracking-wide text-star-100">
             TabRunner
@@ -89,7 +89,7 @@ export function Nav() {
                 title={i18n.getFixedT(lng)("langName")}
                 className={`rounded-full px-2 py-1 transition-colors ${
                   i18n.language === lng
-                    ? "bg-field-600 text-ion-300"
+                    ? "bg-field-600 text-flare-300"
                     : "text-star-500 hover:text-star-300"
                 }`}
               >
@@ -103,7 +103,7 @@ export function Nav() {
 
           <a
             href={LINKS.crx}
-            className="rounded-full bg-ion-500 px-4 py-2 text-sm font-semibold text-field-950 shadow-[0_0_24px_-4px] shadow-ion-500/50 transition-all hover:bg-ion-400 hover:shadow-ion-400/60"
+            className="rounded-full bg-flare-500 px-4 py-2 text-sm font-semibold text-field-950 shadow-[0_0_24px_-4px] shadow-flare-500/50 transition-all hover:bg-flare-400 hover:shadow-flare-400/60"
           >
             {t("nav.download")}
           </a>

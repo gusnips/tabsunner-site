@@ -41,7 +41,7 @@ interface Comet {
   trail: TrailPoint[];
 }
 
-const ION = { r: 103, g: 232, b: 249 }; // ion-400
+const ION = { r: 52, g: 211, b: 153 }; // flare-400
 const TEL = { r: 251, g: 191, b: 36 }; // tel-400
 
 export function CometField() {
@@ -154,7 +154,7 @@ export function CometField() {
       while (c.trail.length && c.trail[c.trail.length - 1].age > keep) c.trail.pop();
 
       const fade = Math.min(1, (c.maxLife - c.life) / 0.6, c.life / 0.15 + 0.2);
-      // ion trail: cyan dying into the dark, warm nucleus flash when launched
+      // burn trail: emerald dying into the dark, warm nucleus flash when launched
       for (let i = 1; i < c.trail.length; i++) {
         const a = c.trail[i - 1];
         const b = c.trail[i];

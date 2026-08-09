@@ -69,7 +69,7 @@ export function RunConsole() {
 
   return (
     <div
-      className="min-w-0 rounded-2xl border border-field-500/60 bg-field-800/70 shadow-[0_0_48px_-12px] shadow-ion-500/25 backdrop-blur-sm"
+      className="min-w-0 rounded-2xl border border-field-500/60 bg-field-800/70 shadow-[0_0_48px_-12px] shadow-flare-500/25 backdrop-blur-sm"
       role="img"
       aria-label={`${t("run.demoBadge")}: ${t("run.task")}`}
     >
@@ -77,7 +77,7 @@ export function RunConsole() {
       <div className="flex items-center gap-3 border-b border-field-600/60 px-5 py-3.5">
         <span
           className={`size-2 shrink-0 rounded-full ${
-            done ? "bg-ion-400" : "live-dot bg-tel-400"
+            done ? "bg-flare-400" : "live-dot bg-tel-400"
           }`}
           aria-hidden="true"
         />
@@ -96,7 +96,7 @@ export function RunConsole() {
         {/* status line */}
         <p className="font-mono text-sm">
           {phase.kind === "done" ? (
-            <span className="text-ion-300">{t("run.done")}</span>
+            <span className="text-flare-300">{t("run.done")}</span>
           ) : (
             <span className="shimmer-text">
               {phase.kind === "planning"
@@ -122,7 +122,7 @@ export function RunConsole() {
                     <span
                       className={
                         state === "done"
-                          ? "text-ion-400"
+                          ? "text-flare-400"
                           : state === "active"
                             ? "text-tel-400"
                             : "text-star-500"
@@ -153,7 +153,7 @@ export function RunConsole() {
           {tools.map((line, i) =>
             tick >= TOOL_AT[i] ? (
               <p key={line.tool}>
-                <span className="text-ion-400">{line.tool}</span>{" "}
+                <span className="text-flare-400">{line.tool}</span>{" "}
                 <span className="text-star-500">{line.detail}</span>
               </p>
             ) : null,

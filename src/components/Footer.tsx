@@ -23,7 +23,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <div className="grid gap-10 sm:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <p className="flex items-center gap-2.5 text-ion-400">
+            <p className="flex items-center gap-2.5 text-flare-400">
               <CometMark size={26} />
               <span className="font-display text-sm font-semibold tracking-wide text-star-100">
                 TabRunner
@@ -44,7 +44,7 @@ export function Footer() {
                     href={link.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-star-300 transition-colors hover:text-ion-300"
+                    className="text-star-300 transition-colors hover:text-flare-300"
                   >
                     {link.label}
                   </a>
@@ -65,7 +65,7 @@ export function Footer() {
                     href={link.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-star-300 transition-colors hover:text-ion-300"
+                    className="text-star-300 transition-colors hover:text-flare-300"
                   >
                     {link.label}
                   </a>

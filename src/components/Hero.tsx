@@ -39,7 +39,7 @@ export function Hero() {
         <div className="min-w-0">
           <h1 className="font-display text-[clamp(2.1rem,4.8vw,3.6rem)] leading-[1.08] font-semibold tracking-[-0.02em] text-balance">
             <span className="block">{t("hero.titleA")}</span>
-            <span className="block text-ion-400">{t("hero.titleB")}</span>
+            <span className="block text-flare-400">{t("hero.titleB")}</span>
           </h1>
           <p className="mt-6 max-w-[62ch] text-lg leading-relaxed text-star-300">
             {t("hero.sub")}
@@ -49,7 +49,7 @@ export function Hero() {
           <form
             ref={formRef}
             onSubmit={onSubmit}
-            className="mt-8 flex items-center gap-2 rounded-2xl border border-field-500/70 bg-field-800/70 p-2 backdrop-blur-sm transition-colors focus-within:border-ion-500/60"
+            className="mt-8 flex items-center gap-2 rounded-2xl border border-field-500/70 bg-field-800/70 p-2 backdrop-blur-sm transition-colors focus-within:border-flare-500/60"
           >
             <label htmlFor="mission-line" className="sr-only">
               {t("hero.missionLabel")}
@@ -62,7 +62,7 @@ export function Hero() {
             />
             <button
               type="submit"
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-field-600 px-4 py-2 font-mono text-sm text-ion-300 transition-colors hover:bg-field-500 hover:text-ion-200"
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-field-600 px-4 py-2 font-mono text-sm text-flare-300 transition-colors hover:bg-field-500 hover:text-flare-200"
             >
               {t("hero.missionGo")}
               <svg
@@ -91,7 +91,7 @@ export function Hero() {
                 {t("hero.demoLaunched")}{" "}
                 <a
                   href="#install"
-                  className="font-semibold text-ion-300 underline decoration-ion-500/40 underline-offset-4 transition-colors hover:text-ion-200"
+                  className="font-semibold text-flare-300 underline decoration-flare-500/40 underline-offset-4 transition-colors hover:text-flare-200"
                 >
                   {t("hero.ctaSecondary")}
                 </a>
@@ -104,7 +104,7 @@ export function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href={LINKS.crx}
-              className="inline-flex items-center gap-2 rounded-full bg-ion-500 px-6 py-3 font-semibold text-field-950 shadow-[0_0_32px_-4px] shadow-ion-500/50 transition-all hover:bg-ion-400 hover:shadow-ion-400/60"
+              className="inline-flex items-center gap-2 rounded-full bg-flare-500 px-6 py-3 font-semibold text-field-950 shadow-[0_0_32px_-4px] shadow-flare-500/50 transition-all hover:bg-flare-400 hover:shadow-flare-400/60"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -124,7 +124,7 @@ export function Hero() {
             </a>
             <a
               href="#install"
-              className="rounded-full border border-field-500 px-6 py-3 font-semibold text-star-100 transition-colors hover:border-ion-500/60 hover:text-ion-300"
+              className="rounded-full border border-field-500 px-6 py-3 font-semibold text-star-100 transition-colors hover:border-flare-500/60 hover:text-flare-300"
             >
               {t("hero.ctaSecondary")}
             </a>

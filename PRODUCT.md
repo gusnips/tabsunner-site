@@ -58,13 +58,13 @@ Two claims a neighboring product cannot copy:
 
 ## Brand Commitments
 
-- Name: **TabRunner** ("it runs your tabs"). Mark: the **comet** — a body in motion with its
-  trail; generated from `src/shared/logo.ts`, never hand-edited.
-- Brand color (2026-08, user-confirmed): **comet-ice** — deep-space indigo ground, electric
-  cyan/ice-blue comet trails (a comet's ion tail is blue), warm amber for live telemetry. This
-  replaces the original royal-purple scale (`#8b5cf6` family still in the extension's
-  `chrome/src/lib/theme.css` and current screenshots); the extension redesign will regenerate
-  icons/OG from source in the new palette. Until then, product screenshots show the old brand.
+- Name: **TabRunner** ("it runs your tabs"). Mark: the **comet-tab** — a browser-tab silhouette
+  in motion with its burn trail; generated from `src/shared/logo.ts`, never hand-edited.
+- Brand color (2026-08, user-confirmed): **comet-burn** — deep-space indigo ground, emerald comet
+  trails (the green a comet burns on entry; the runner's "go"), warm amber for live telemetry.
+  This replaced the original royal purple (`#8b5cf6` family) after a brief cyan pass
+  (`#22d3ee` family, rejected in review); the extension carries the same palette via its
+  `brand-*` tokens, and icons/OG/screenshots regenerate from source in it.
 - Voice: direct, technically honest, zero hype. No invented testimonials, customers, benchmarks,
   or pricing. Avoid the generic AI-hype SaaS feel (user-confirmed anti-vibe).
 

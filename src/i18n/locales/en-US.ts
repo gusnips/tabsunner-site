@@ -105,7 +105,7 @@ export const enUS = {
       "Providers: presets or any compatible endpoint",
       "A second chat, answering in your language",
     ],
-    note: "Screenshots from the current build, still wearing the old purple and the pre-rename “Regent” mark — retakes in this palette land with the extension's redesign.",
+    note: "Screenshots from the current build — captured automatically, so they never lag a redesign.",
   },
   install: {
     title: "The flight plan",

@@ -2,10 +2,10 @@
  * DIRECTION CONTRACT — tabrunner.app, "The Comet Field" (see DESIGN.md)
  *
  * THESIS: Tabs are comets — the browser's tab strip is a night sky, and every
- * task launches a tab that streaks across it with an ice-blue ion trail.
+ * task launches a tab that streaks across it with an emerald burn trail.
  * Refuses the category default (glowing orb hero + uniform bento of icon cards).
  * OWN-WORLD: deep-field indigo ground (#070b16 family); only two lights —
- * ion cyan (#22d3ee family) for motion, telemetry amber (#fbbf24) for
+ * burn emerald (#10b981 family) for motion, telemetry amber (#fbbf24) for
  * measurement; Unbounded display / Figtree body / JetBrains Mono telemetry;
  * the comet-tab glyph recurs from favicon to canvas to screenshot frame.
  * STORY: a visitor sees a task enter the mission line, a comet leave it, and

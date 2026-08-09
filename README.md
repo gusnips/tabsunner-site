@@ -30,8 +30,8 @@ Three documents own the decisions; read them before changing the surface:
 
 The direction contract also lives at the top of `src/App.tsx`. The short version:
 
-- Two lights only — ion cyan for motion, telemetry amber for measurement. No third hue, and
-  never the retired purple.
+- Two lights only — burn emerald for motion, telemetry amber for measurement. No third hue, and
+  never the retired purple (nor the brief cyan).
 - Glow means live. Static content sits flat; only running things and the primary action glow.
 - Monospace is only ever data — time, tokens, commands, refs. Prose never wears mono.
 - One authored moment (the mission line launching a comet). Sections do not animate in;

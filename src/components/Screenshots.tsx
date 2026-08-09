@@ -59,7 +59,7 @@ export function Screenshots() {
             aria-label={captions[i]}
             className={`overflow-hidden rounded-lg border bg-field-800 transition-all ${
               selected === i
-                ? "border-ion-500/70"
+                ? "border-flare-500/70"
                 : "border-field-600/60 opacity-60 hover:opacity-100"
             }`}
           >

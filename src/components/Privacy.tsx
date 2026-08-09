@@ -6,7 +6,7 @@ import { CometMark } from "./CometMark";
 function Flow() {
   return (
     <div className="flex items-center" aria-hidden="true">
-      <span className="h-px w-8 bg-ion-500/60 sm:w-14" />
+      <span className="h-px w-8 bg-flare-500/60 sm:w-14" />
       <svg
         viewBox="0 0 8 8"
         fill="none"
@@ -14,7 +14,7 @@ function Flow() {
         strokeWidth="1.25"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="-ml-px size-2 text-ion-500/70"
+        className="-ml-px size-2 text-flare-500/70"
       >
         <path d="m3 1.5 3 2.5-3 2.5" />
       </svg>
@@ -46,7 +46,7 @@ export function Privacy() {
               <li key={point} className="flex gap-3 leading-relaxed text-star-300">
                 <span
                   aria-hidden="true"
-                  className="mt-2.5 size-1.5 shrink-0 rotate-45 bg-ion-400"
+                  className="mt-2.5 size-1.5 shrink-0 rotate-45 bg-flare-400"
                 />
                 {point}
               </li>
@@ -56,7 +56,7 @@ export function Privacy() {
             href={LINKS.privacy}
             target="_blank"
             rel="noreferrer"
-            className="mt-8 inline-flex items-center gap-2 font-semibold text-ion-300 underline decoration-ion-500/40 underline-offset-4 transition-colors hover:text-ion-200"
+            className="mt-8 inline-flex items-center gap-2 font-semibold text-flare-300 underline decoration-flare-500/40 underline-offset-4 transition-colors hover:text-flare-200"
           >
             {t("privacy.link")}
             <svg
@@ -83,7 +83,7 @@ export function Privacy() {
         >
           <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-x-3 gap-y-8">
             {/* browser node */}
-            <div className="row-span-2 rounded-xl border border-ion-500/50 bg-field-900 px-4 py-5 text-center">
+            <div className="row-span-2 rounded-xl border border-flare-500/50 bg-field-900 px-4 py-5 text-center">
               <CometMark size={28} className="mx-auto" />
               <p className="mt-2 text-sm font-semibold text-star-100">
                 {t("privacy.diagramBrowser")}
@@ -94,7 +94,7 @@ export function Privacy() {
             <Flow />
             <div className="rounded-xl border border-field-500/60 bg-field-900 px-4 py-4 text-center">
               <p className="text-sm font-semibold text-star-100">{t("privacy.diagramProvider")}</p>
-              <p className="mt-1 font-mono text-[11px] text-ion-300">
+              <p className="mt-1 font-mono text-[11px] text-flare-300">
                 {t("privacy.diagramKeyFlow")}
               </p>
             </div>
@@ -102,7 +102,7 @@ export function Privacy() {
             <Flow />
             <div className="rounded-xl border border-field-500/60 bg-field-900 px-4 py-4 text-center">
               <p className="text-sm font-semibold text-star-100">{t("privacy.diagramSites")}</p>
-              <p className="mt-1 font-mono text-[11px] text-ion-300">
+              <p className="mt-1 font-mono text-[11px] text-flare-300">
                 {t("privacy.diagramTaskFlow")}
               </p>
             </div>

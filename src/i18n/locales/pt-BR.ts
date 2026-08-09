@@ -15,7 +15,7 @@ export const ptBR: Locale = {
   },
   hero: {
     titleA: "Você dá o objetivo.",
-    titleB: "Ele roda as abas.",
+    titleB: "Ele roda nas abas.",
     sub: "Um agente de IA que dirige seu navegador de verdade — suas abas, suas sessões, suas contas logadas — com qualquer provedor que você escolher. Descreva uma tarefa no painel lateral; o TabRunner lê páginas, clica, digita e navega até o trabalho estar pronto.",
     ctaPrimary: "Baixar para Chromium",
     ctaSecondary: "Como instalar",
@@ -111,7 +111,7 @@ export const ptBR: Locale = {
       "Provedores: predefinições ou qualquer endpoint compatível",
       "Outro chat, respondendo no seu idioma",
     ],
-    note: "Capturas da build atual, ainda no roxo antigo e com a marca “Regent” de antes da renomeação — novas capturas nesta paleta chegam com o redesign da extensão.",
+    note: "Capturas do build atual — geradas automaticamente, então nunca ficam para trás de um redesign.",
   },
   install: {
     title: "O plano de voo",
@@ -156,7 +156,7 @@ export const ptBR: Locale = {
     link: "Leia a política de privacidade completa",
   },
   footer: {
-    tagline: "Você dá o objetivo. Ele roda as abas.",
+    tagline: "Você dá o objetivo. Ele roda nas abas.",
     chromium: "Só Chromium — Chrome, Brave, Edge, Arc, Opera, Vivaldi.",
     license: "Código aberto, licença MIT.",
     productHeading: "Produto",

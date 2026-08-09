@@ -5,7 +5,7 @@
 
 /*
  * tabrunner.app — "The Comet Field" (see DESIGN.md).
- * Two lights only: ion cyan = motion, telemetry amber = measurement.
+ * Two lights only: burn emerald = motion, telemetry amber = measurement.
  */
 @theme {
   /* Deep Field — the night sky, indigo-leaning, never pure black */
@@ -16,13 +16,14 @@
   --color-field-600: #1a2547;
   --color-field-500: #25325c;
 
-  /* Ion — comet tail cyan; the color of things that move */
-  --color-ion-200: #cffafe;
-  --color-ion-300: #a5f3fc;
-  --color-ion-400: #67e8f9;
-  --color-ion-500: #22d3ee;
-  --color-ion-600: #06b6d4;
-  --color-ion-700: #0e7490;
+  /* Flare — the green a comet burns on entry; the color of things that move.
+     Tailwind emerald, the same scale the extension's brand-* aliases. */
+  --color-flare-200: #d1fae5;
+  --color-flare-300: #6ee7b7;
+  --color-flare-400: #34d399;
+  --color-flare-500: #10b981;
+  --color-flare-600: #059669;
+  --color-flare-700: #047857;
 
   /* Telemetry — amber measures; if it's amber, the agent is working */
   --color-tel-300: #fcd34d;
@@ -52,8 +53,8 @@ body {
 }
 
 ::selection {
-  background: var(--color-ion-500);
-  color: var(--color-field-950);
+  background: var(--color-flare-600);
+  color: #ffffff;
 }
 
 /* Telemetry numerals never jitter while ticking. */
@@ -83,7 +84,7 @@ body {
  * Status-verb shimmer (adapted from the extension's shimmer-text): a run can sit
  * between visible changes; a moving highlight is the honest "still working" signal.
  */
-@keyframes ion-shimmer {
+@keyframes flare-shimmer {
   from {
     background-position: 150% center;
   }
@@ -95,21 +96,21 @@ body {
   background-image: linear-gradient(
     100deg,
     var(--color-tel-400) 30%,
-    var(--color-ion-200) 50%,
+    var(--color-flare-200) 50%,
     var(--color-tel-400) 70%
   );
   background-size: 250% auto;
   background-clip: text;
   color: transparent;
-  animation: ion-shimmer 2.4s linear infinite;
+  animation: flare-shimmer 2.4s linear infinite;
 }
 
 /*
- * Focus ring — the page owns it rather than inheriting the UA's. Ion, because
+ * Focus ring — the page owns it rather than inheriting the UA's. Flare, because
  * focus is the one thing on the page that moves under the keyboard.
  */
 :focus-visible {
-  outline: 2px solid var(--color-ion-400);
+  outline: 2px solid var(--color-flare-400);
   outline-offset: 2px;
   border-radius: 4px;
 }

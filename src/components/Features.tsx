@@ -23,7 +23,7 @@ type Item = { title: string; body: string };
 function Chip({ tone = "default", children }: { tone?: "default" | "hub" | "gate" | "ghost"; children: ReactNode }) {
   const tones = {
     default: "rounded-full border-field-500/60 text-star-300",
-    hub: "rounded-full border-ion-500/50 text-ion-300",
+    hub: "rounded-full border-flare-500/50 text-flare-300",
     gate: "rounded-md border-field-500/60 text-star-100",
     ghost: "rounded-full border-dashed border-field-500/60 text-star-500",
   };
@@ -42,7 +42,7 @@ function Station({ children }: { children: ReactNode }) {
     <div className="relative flex items-center gap-3 py-1 pl-10 lg:col-start-2 lg:row-start-1 lg:justify-center lg:py-2 lg:pl-0">
       <span
         aria-hidden="true"
-        className="absolute top-1/2 left-[7px] size-3 -translate-y-1/2 rounded-full border-2 border-ion-500/70 bg-field-900 lg:hidden"
+        className="absolute top-1/2 left-[7px] size-3 -translate-y-1/2 rounded-full border-2 border-flare-500/70 bg-field-900 lg:hidden"
       />
       {children}
     </div>
@@ -116,7 +116,7 @@ export function Features() {
           {/* the rail every stop hangs on */}
           <span
             aria-hidden="true"
-            className="absolute top-2 bottom-2 left-[13px] w-px bg-ion-500/25 lg:left-1/2"
+            className="absolute top-2 bottom-2 left-[13px] w-px bg-flare-500/25 lg:left-1/2"
           />
 
           {/* the port: a task arrives, from you or from an MCP client */}
@@ -188,7 +188,7 @@ export function Features() {
                     {preset}
                   </li>
                 ))}
-                <li className="rounded-md border border-ion-500/40 px-2 py-0.5 font-mono text-[11px] text-ion-300">
+                <li className="rounded-md border border-flare-500/40 px-2 py-0.5 font-mono text-[11px] text-flare-300">
                   {t("features.providersMore")}
                 </li>
               </ul>
@@ -216,9 +216,9 @@ export function Features() {
             <Note item={items[2]} side="left">
               <pre className="mt-3 overflow-x-auto rounded-lg border border-field-500/60 bg-field-900/70 px-3 py-2 text-left font-mono text-[11px] leading-relaxed text-star-300">
                 <code>
-                  <span className="text-ion-300">[ref=e12]</span> button &quot;Submit&quot;
+                  <span className="text-flare-300">[ref=e12]</span> button &quot;Submit&quot;
                   {"\n"}
-                  <span className="text-ion-300">[ref=e13]</span> textbox &quot;Email&quot;
+                  <span className="text-flare-300">[ref=e13]</span> textbox &quot;Email&quot;
                 </code>
               </pre>
             </Note>

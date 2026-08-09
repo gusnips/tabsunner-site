@@ -15,7 +15,7 @@ export const esES: Locale = {
   },
   hero: {
     titleA: "Tú pones la meta.",
-    titleB: "Él corre las pestañas.",
+    titleB: "Él corre en las pestañas.",
     sub: "Un agente de IA que maneja tu navegador real — tus pestañas, tus sesiones, tus cuentas conectadas — con el proveedor que elijas. Describe una tarea en el panel lateral; TabRunner lee páginas, hace clic, escribe y navega hasta terminar el trabajo.",
     ctaPrimary: "Descargar para Chromium",
     ctaSecondary: "Cómo instalar",
@@ -111,7 +111,7 @@ export const esES: Locale = {
       "Proveedores: preajustes o cualquier endpoint compatible",
       "Otro chat, respondiendo en tu idioma",
     ],
-    note: "Capturas de la build actual, aún con el púrpura anterior y la marca “Regent” de antes del renombre — nuevas capturas con esta paleta llegan con el rediseño de la extensión.",
+    note: "Capturas de la build actual — generadas automáticamente, así que nunca se quedan atrás de un rediseño.",
   },
   install: {
     title: "El plan de vuelo",
@@ -156,7 +156,7 @@ export const esES: Locale = {
     link: "Lee la política de privacidad completa",
   },
   footer: {
-    tagline: "Tú pones la meta. Él corre las pestañas.",
+    tagline: "Tú pones la meta. Él corre en las pestañas.",
     chromium: "Solo Chromium — Chrome, Brave, Edge, Arc, Opera, Vivaldi.",
     license: "Código abierto, licencia MIT.",
     productHeading: "Producto",

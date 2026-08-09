@@ -6,9 +6,9 @@ colors:
   field-deep: "#04060d"
   field-panel: "#0b1224"
   field-border: "#25325c"
-  ion: "#22d3ee"
-  ion-bright: "#67e8f9"
-  ion-pale: "#a5f3fc"
+  flare: "#10b981"
+  flare-bright: "#34d399"
+  flare-pale: "#6ee7b7"
   telemetry: "#fbbf24"
   telemetry-dim: "#fcd34d"
   starlight: "#e8eefb"
@@ -45,12 +45,12 @@ rounded:
   pill: "9999px"
 components:
   button-primary:
-    backgroundColor: "{colors.ion}"
+    backgroundColor: "{colors.flare}"
     textColor: "{colors.field-deep}"
     rounded: "{rounded.pill}"
     padding: "12px 24px"
   button-primary-hover:
-    backgroundColor: "{colors.ion-bright}"
+    backgroundColor: "{colors.flare-bright}"
   button-ghost:
     backgroundColor: "transparent"
     textColor: "{colors.starlight}"
@@ -80,10 +80,10 @@ components:
 **Creative North Star: "The Comet Field"**
 
 The browser's tab strip is a night sky, and every task launches a comet: a tab in motion with an
-ice-blue ion trail behind it. The site is the mission-control room for that sky — dark, quiet,
-instrumented — where a visitor watches one run happen and believes it. The category default (a
-glowing orb over a bento grid of icon cards, everything purple, copy that says "revolutionary")
-is refused in full.
+emerald burn trail behind it — the green a comet burns on entry. The site is the mission-control
+room for that sky — dark, quiet, instrumented — where a visitor watches one run happen and
+believes it. The category default (a glowing orb over a bento grid of icon cards, everything
+purple, copy that says "revolutionary") is refused in full.
 
 Density is low and cinematic up top, tightening into instrument panels (the run console, the
 install flight plan) as the visitor descends. Motion is the material: comets cross the fixed
@@ -100,7 +100,7 @@ sees. Content is visible at rest, always.
 **Key Characteristics:**
 
 - Deep-field indigo ground, never pure black; stars and comet trails carry the light.
-- Ion cyan is the comet's tail — the color of *motion*, not of decoration.
+- Burn emerald is the comet's tail — the color of *motion*, not of decoration.
 - Telemetry amber measures: timers, token counters, live pulses. Amber means "the agent is working."
 - Browser chrome is compositional material: the sticky top bar is a chrome bar (favicon, omnibox,
   actions); the screenshot viewer sits inside a browser frame; the brand mark is a tab in flight.
@@ -109,12 +109,13 @@ sees. Content is visible at rest, always.
 
 ## Colors
 
-Drenched dark: the surface IS the night sky; cyan and amber are light sources inside it.
+Drenched dark: the surface IS the night sky; emerald and amber are light sources inside it.
 
 ### Primary
 
-- **Ion** (`#22d3ee`): comet trails, primary actions, links, active states. The color of things
-  that move. Bright (`#67e8f9`) for hover and near-head trail; pale (`#a5f3fc`) for shimmer peaks.
+- **Flare** (`#10b981`): comet trails, primary actions, links, active states. The color of things
+  that move. Bright (`#34d399`) for hover and near-head trail; pale (`#6ee7b7`) for shimmer peaks.
+  Fills take field-deep ink — flare-500 carries it at ~6:1.
 
 ### Secondary
 
@@ -123,19 +124,19 @@ Drenched dark: the surface IS the night sky; cyan and amber are light sources in
 
 ### Neutral
 
-- **Field Ground** (`#070b16`): page sky. **Field Deep** (`#04060d`): text on ion buttons, canvas
+- **Field Ground** (`#070b16`): page sky. **Field Deep** (`#04060d`): text on flare buttons, canvas
   backdrop. **Field Panel** (`#0b1224`): instrument glass. **Field Border** (`#25325c`): hairlines.
 - **Starlight** (`#e8eefb`): primary text. **Star Dim** (`#b9c6de`): secondary text.
   **Star Faint** (`#8797ba`): captions, placeholders — tinted from the sky, never pure gray.
 
 ### Named Rules
 
-**The Two Lights Rule.** Only two hues emit light on this page: cyan (motion) and amber
+**The Two Lights Rule.** Only two hues emit light on this page: emerald (motion) and amber
 (measurement). Any third saturated hue is a bug, not a flourish.
 
 **The No-Purple Rule.** The retired royal-purple brand (`#8b5cf6` family) must not appear in new
-work. It survives only inside legacy product screenshots, which the site itself labels as
-old-brand until the extension's redesign lands.
+work; the cyan that briefly replaced it (2026-08, first pass) is retired with it. Both survive
+only in git history.
 
 ## Typography
 
@@ -146,7 +147,7 @@ old-brand until the extension's redesign lands.
 ### Hierarchy
 
 - **Display** (600, `clamp(2.1rem, 4.8vw, 3.6rem)`, 1.08, −0.02em): hero statement (two block
-  lines, second in ion) and section headings (`text-3xl`–`4xl`).
+  lines, second in flare) and section headings (`text-3xl`–`4xl`).
 - **Body** (400–500, 1–1.125rem, measure ≤62ch): explanatory copy.
 - **Telemetry** (mono, three steps only — `text-[10px]` badges and frame chrome, `text-[11px]`
   plan and diagram captions, `text-xs`/`text-sm` timers and tool lines; uppercase tracking for
@@ -169,8 +170,8 @@ without it. Mobile stacks: hero becomes headline → mission line → CTAs → c
 ## Elevation & Depth
 
 Depth is atmospheric: translucent field-panel fills over the sky, hairline field-border strokes,
-and a soft cyan glow only around things that are *alive* — the run console, the primary CTA, the
-selected screenshot. No drop-shadow stacking, no offset block shadows.
+and a soft emerald glow only around things that are *alive* — the run console, the primary CTA,
+the selected screenshot. No drop-shadow stacking, no offset block shadows.
 
 ### Named Rules
 
@@ -179,9 +180,9 @@ running things (or the one action we want taken) may glow.
 
 ## Shapes
 
-- The **comet-tab**: a browser-tab silhouette (rounded top corners, flat bottom) with a cyan
+- The **comet-tab**: a browser-tab silhouette (rounded top corners, flat bottom) with an emerald
   favicon dot and two speed trails — the brand mark, recurring from favicon to canvas comet heads
-  to the screenshot frame's tab. Authored SVG, one geometry, comet-ice palette.
+  to the screenshot frame's tab. Authored SVG, one geometry, comet-burn palette.
 - Panels/cards: gently curved instrument glass (16px). Controls 12px. Pills for buttons, chips,
   status badges.
 
@@ -190,18 +191,19 @@ running things (or the one action we want taken) may glow.
 ### Buttons
 
 - **Shape:** pill (9999px).
-- **Primary:** ion background, field-deep text, 12/24 padding, soft cyan glow (the Glow-Means-Live
-  exception: it is the action we want taken). Hover brightens to ion-bright and lifts the glow.
-- **Ghost:** transparent, field-border stroke, starlight text; hover strokes ion and tints text.
+- **Primary:** flare background, field-deep text, 12/24 padding, soft emerald glow (the
+  Glow-Means-Live exception: it is the action we want taken). Hover brightens to flare-bright and
+  lifts the glow.
+- **Ghost:** transparent, field-border stroke, starlight text; hover strokes flare and tints text.
 
 ### Cards / Containers
 
 - 16px radius, field-panel fill at 60–70% opacity over the sky, hairline field-border, no shadow
-  at rest. The live run console adds the cyan aura and a pulsing amber dot.
+  at rest. The live run console adds the emerald aura and a pulsing amber dot.
 
 ### Inputs / Fields
 
-- The **mission line**: 16px panel with inner padding, focus-within strokes ion; the submit
+- The **mission line**: 16px panel with inner padding, focus-within strokes flare; the submit
   control is a field-600 tile with mono label. Placeholder rotates through real example tasks.
 
 ### Navigation
@@ -215,7 +217,7 @@ running things (or the one action we want taken) may glow.
 
 ### Focus
 
-- One ion ring for every focusable thing: `2px` solid ion-bright at `2px` offset, on
+- One flare ring for every focusable thing: `2px` solid flare-bright at `2px` offset, on
   `:focus-visible` only. A skip link is the first focusable element on the page.
 
 ### Run Console (signature)
@@ -230,7 +232,7 @@ exactly as the run finishes. Reduced motion shows the finished run.
 
 ### Do:
 
-- **Do** make the sky respond: the mission line launches a comet; the pointer leaves an ion wake.
+- **Do** make the sky respond: the mission line launches a comet; the pointer leaves a flare wake.
 - **Do** show the product working: a labelled simulated run, real screenshots in a chrome frame.
 - **Do** state hard truths in plain view: Chromium-only, sideload caveats, no server.
 - **Do** keep telemetry in tabular numerals so ticking values never jitter.
