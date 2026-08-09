@@ -127,7 +127,7 @@ export const enUS = {
       "No auto-update: new versions are a manual re-download from this same link (which is why it never changes).",
       "When the store listing ships, it installs as a separate extension (different signing key) — remove the sideloaded one after migrating; settings don't carry over.",
     ],
-    zipTitle: "Prefer the zip?",
+    zipTitle: "Prefer the ZIP?",
     zipSteps:
       "Download and unzip, then chrome://extensions → Developer mode → Load unpacked → select the unzipped folder.",
     downloadZip: "Download ZIP",
@@ -150,6 +150,10 @@ export const enUS = {
     diagramServer: "TabRunner server",
     diagramServerNone: "doesn't exist",
     link: "Read the full privacy policy",
+  },
+  legal: {
+    back: "Back to tabrunner.app",
+    source: "Source of truth:",
   },
   footer: {
     tagline: "You give the goal. It runs the tabs.",

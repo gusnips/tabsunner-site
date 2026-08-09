@@ -26,11 +26,18 @@ import { Features } from "./components/Features";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
 import { Install } from "./components/Install";
+import { LegalPage } from "./components/LegalPage";
 import { Nav } from "./components/Nav";
 import { Privacy } from "./components/Privacy";
 import { Screenshots } from "./components/Screenshots";
 
 export function App() {
+  // No router: CF Pages serves index.html for every path (public/_redirects),
+  // and the legal pages are plain full-page loads off the landing.
+  const path = window.location.pathname;
+  if (path === "/privacy" || path === "/privacy/") return <LegalPage doc="privacy" />;
+  if (path === "/terms" || path === "/terms/") return <LegalPage doc="terms" />;
+
   return (
     <>
       <CometField />

@@ -14,8 +14,8 @@ export function Footer() {
   const projectLinks = [
     { label: "GitHub", href: LINKS.repo },
     { label: t("footer.issues"), href: LINKS.issues },
-    { label: t("footer.privacyLink"), href: LINKS.privacy },
-    { label: t("footer.termsLink"), href: LINKS.terms },
+    { label: t("footer.privacyLink"), href: LINKS.privacy, internal: true },
+    { label: t("footer.termsLink"), href: LINKS.terms, internal: true },
     { label: t("footer.mcpDocs"), href: LINKS.mcpDocs },
   ];
 
@@ -64,8 +64,7 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    target="_blank"
-                    rel="noreferrer"
+                    {...("internal" in link ? {} : { target: "_blank", rel: "noreferrer" })}
                     className="text-star-300 transition-colors hover:text-flare-300"
                   >
                     {link.label}

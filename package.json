@@ -10,6 +10,7 @@
     "check": "bun run scripts/check-run-phase.ts",
     "preview": "vite preview",
     "sync": "bun run scripts/sync-assets.ts",
+    "sync:legal": "bun run scripts/sync-legal.ts",
     "og": "bun run scripts/gen-og.ts",
     "shoot": "bun run scripts/shoot.ts"
   },
@@ -17,7 +18,9 @@
     "i18next": "^26.3.6",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-i18next": "^17.0.11"
+    "react-i18next": "^17.0.11",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@fontsource-variable/figtree": "^5.2.5",

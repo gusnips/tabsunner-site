@@ -133,7 +133,7 @@ export const ptBR: Locale = {
       "Sem atualização automática: versões novas são um novo download pelo mesmo link (é por isso que ele nunca muda).",
       "Quando a versão da loja sair, ela instala como uma extensão separada (chave de assinatura diferente) — remova a sideloaded depois de migrar; as configurações não migram.",
     ],
-    zipTitle: "Prefere o zip?",
+    zipTitle: "Prefere o ZIP?",
     zipSteps:
       "Baixe e descompacte, depois chrome://extensions → Modo de desenvolvedor → Carregar sem compactação → selecione a pasta descompactada.",
     downloadZip: "Baixar ZIP",
@@ -157,6 +157,10 @@ export const ptBR: Locale = {
     diagramServer: "servidor TabRunner",
     diagramServerNone: "não existe",
     link: "Leia a política de privacidade completa",
+  },
+  legal: {
+    back: "Voltar para tabrunner.app",
+    source: "Fonte oficial:",
   },
   footer: {
     tagline: "Você dá o objetivo. Ele roda nas abas.",

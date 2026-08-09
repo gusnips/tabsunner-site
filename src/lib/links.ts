@@ -8,8 +8,9 @@ export const LINKS = {
   releases: "https://github.com/gusnips/tabrunner/releases/latest",
   repo: "https://github.com/gusnips/tabrunner",
   issues: "https://github.com/gusnips/tabrunner/issues",
-  privacy: "https://github.com/gusnips/tabrunner/blob/main/PRIVACY.md",
-  terms: "https://github.com/gusnips/tabrunner/blob/main/TERMS.md",
+  // Legal docs render in-site (synced from the chrome repo by `bun run sync:legal`).
+  privacy: "/privacy",
+  terms: "/terms",
   mcpDocs: "https://github.com/gusnips/tabrunner/blob/main/docs/mcp.md",
   /** Live once the listing is approved; until then the CRX is the primary install. */
   store: "https://chromewebstore.google.com/detail/gkblgkcofolbpcbafkdhiihfbpjhdpgh",

@@ -54,8 +54,6 @@ export function Privacy() {
           </ul>
           <a
             href={LINKS.privacy}
-            target="_blank"
-            rel="noreferrer"
             className="mt-8 inline-flex items-center gap-2 font-semibold text-flare-300 underline decoration-flare-500/40 underline-offset-4 transition-colors hover:text-flare-200"
           >
             {t("privacy.link")}

@@ -15,6 +15,7 @@ deep architecture.
 bun run dev      # vite dev server
 bun run build    # tsc --noEmit && vite build → dist/  (this IS the gate — keep it green)
 bun run sync     # pull product screenshots from ../chrome/docs/screenshots → public/screenshots (webp)
+bun run sync:legal # pull PRIVACY.md/TERMS.md raw from GitHub → src/legal/ (committed; rendered at /privacy, /terms)
 bun run og       # regenerate public/og.png (scripts/gen-og.ts)
 bun run shoot    # screenshot the built site, overflow report → preview/shots/ (gitignored output)
 ```

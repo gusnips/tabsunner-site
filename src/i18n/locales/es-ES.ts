@@ -133,7 +133,7 @@ export const esES: Locale = {
       "Sin actualización automática: las versiones nuevas se descargan a mano desde este mismo enlace (por eso nunca cambia).",
       "Cuando salga la versión de la tienda, se instala como una extensión separada (otra clave de firma) — quita la instalada a mano tras migrar; los ajustes no se transfieren.",
     ],
-    zipTitle: "¿Prefieres el zip?",
+    zipTitle: "¿Prefieres el ZIP?",
     zipSteps:
       "Descarga y descomprime, luego chrome://extensions → Modo de desarrollador → Cargar descomprimida → selecciona la carpeta descomprimida.",
     downloadZip: "Descargar ZIP",
@@ -157,6 +157,10 @@ export const esES: Locale = {
     diagramServer: "servidor TabRunner",
     diagramServerNone: "no existe",
     link: "Lee la política de privacidad completa",
+  },
+  legal: {
+    back: "Volver a tabrunner.app",
+    source: "Fuente oficial:",
   },
   footer: {
     tagline: "Tú pones la meta. Él corre en las pestañas.",
