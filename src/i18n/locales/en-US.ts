@@ -59,7 +59,7 @@ export const enUS = {
     items: [
       {
         title: "Bring your own provider",
-        body: "15 presets: sign in with the Anthropic, OpenAI or Kimi subscription you already pay for, or paste an API key for the providers below — plus any endpoint speaking the OpenAI or Anthropic wire format. No lock-in, no relay.",
+        body: "15 presets across the 12 providers below: sign in with the Anthropic, OpenAI or Kimi subscription you already pay for, or paste an API key — plus any endpoint speaking the OpenAI or Anthropic wire format. No lock-in, no relay.",
       },
       {
         title: "Real trusted input",
@@ -82,6 +82,19 @@ export const enUS = {
         body: "Your key goes straight from the extension to your provider. Configs and history live in chrome.storage on your device. No account, no telemetry, nothing to breach.",
       },
     ],
+  },
+  route: {
+    title: "Signal path — one task, end to end",
+    you: "you",
+    or: "or",
+    mcp: "an MCP client",
+    extension: "tabrunner",
+    provider: "your provider",
+    gate: "guardrails",
+    page: "the page",
+    relay: "a relay server",
+    legAsk: "the ask / the plan",
+    legAct: "trusted input / the page as refs",
   },
   shots: {
     title: "The panel is the product",

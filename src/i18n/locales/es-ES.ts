@@ -65,7 +65,7 @@ export const esES: Locale = {
     items: [
       {
         title: "Trae tu propio proveedor",
-        body: "15 preajustes: entra con la suscripción de Anthropic, OpenAI o Kimi que ya pagas, o pega una clave de API de los proveedores de abajo — más cualquier endpoint que hable el formato OpenAI o Anthropic. Sin lock-in, sin intermediarios.",
+        body: "15 preajustes entre los 12 proveedores de abajo: entra con la suscripción de Anthropic, OpenAI o Kimi que ya pagas, o pega una clave de API — más cualquier endpoint que hable el formato OpenAI o Anthropic. Sin lock-in, sin intermediarios.",
       },
       {
         title: "Entrada confiable de verdad",
@@ -88,6 +88,19 @@ export const esES: Locale = {
         body: "Tu clave va directo de la extensión a tu proveedor. La configuración y el historial viven en chrome.storage en tu dispositivo. Sin cuenta, sin telemetría, nada que filtrar.",
       },
     ],
+  },
+  route: {
+    title: "Ruta de la señal — una tarea, de extremo a extremo",
+    you: "tú",
+    or: "o",
+    mcp: "un cliente MCP",
+    extension: "tabrunner",
+    provider: "tu proveedor",
+    gate: "barandillas",
+    page: "la página",
+    relay: "un servidor de retransmisión",
+    legAsk: "la petición / el plan",
+    legAct: "entrada confiable / la página como refs",
   },
   shots: {
     title: "El panel es el producto",

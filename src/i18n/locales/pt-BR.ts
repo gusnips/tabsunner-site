@@ -65,7 +65,7 @@ export const ptBR: Locale = {
     items: [
       {
         title: "Traga seu provedor",
-        body: "15 predefinições: entre com a assinatura da Anthropic, OpenAI ou Kimi que você já paga, ou cole uma chave de API dos provedores abaixo — mais qualquer endpoint compatível com o formato OpenAI ou Anthropic. Sem lock-in, sem intermediário.",
+        body: "15 predefinições entre os 12 provedores abaixo: entre com a assinatura da Anthropic, OpenAI ou Kimi que você já paga, ou cole uma chave de API — mais qualquer endpoint compatível com o formato OpenAI ou Anthropic. Sem lock-in, sem intermediário.",
       },
       {
         title: "Entrada confiável de verdade",
@@ -88,6 +88,19 @@ export const ptBR: Locale = {
         body: "Sua chave vai direto da extensão para o seu provedor. Configurações e histórico ficam no chrome.storage do seu dispositivo. Sem conta, sem telemetria, nada para vazar.",
       },
     ],
+  },
+  route: {
+    title: "Caminho do sinal — uma tarefa, de ponta a ponta",
+    you: "você",
+    or: "ou",
+    mcp: "um cliente MCP",
+    extension: "tabrunner",
+    provider: "seu provedor",
+    gate: "guarda-corpos",
+    page: "a página",
+    relay: "um servidor de retransmissão",
+    legAsk: "o pedido / o plano",
+    legAct: "entrada confiável / a página como refs",
   },
   shots: {
     title: "O painel é o produto",
