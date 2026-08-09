@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { detectBrowser, type BrowserGuess } from "../lib/browser";
 import { CHROMIUM_BROWSERS, LINKS } from "../lib/links";
 import { launchComet } from "./CometField";
 import { RunConsole } from "./RunConsole";
@@ -7,14 +8,27 @@ import { RunConsole } from "./RunConsole";
 /**
  * First viewport: the thesis. A task goes into the mission line, a comet-tab
  * leaves it — and the console beside it shows what a run looks like. The
- * primary action (Download) sits under the pitch, glow and all.
+ * primary action (Download) sits under the pitch, glow and all, and names the
+ * visitor's own browser when it can; a non-Chromium visitor gets the truth in
+ * words instead of a button that would never work (the DESIGN.md rule).
  */
 export function Hero() {
   const { t } = useTranslation();
   const placeholders = t("hero.placeholders", { returnObjects: true }) as string[];
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
   const [launched, setLaunched] = useState(false);
+  const [browser, setBrowser] = useState<BrowserGuess | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    let live = true;
+    void detectBrowser().then((b) => {
+      if (live) setBrowser(b);
+    });
+    return () => {
+      live = false;
+    };
+  }, []);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -102,26 +116,34 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a
-              href={LINKS.crx}
-              className="inline-flex items-center gap-2 rounded-full bg-flare-500 px-6 py-3 font-semibold text-field-950 shadow-[0_0_32px_-4px] shadow-flare-500/50 transition-all hover:bg-flare-400 hover:shadow-flare-400/60"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="size-4"
-                aria-hidden="true"
+            {browser && !browser.chromium ? (
+              <p className="max-w-md text-sm leading-relaxed text-star-300">
+                {t("hero.ctaUnsupported")}
+              </p>
+            ) : (
+              <a
+                href={LINKS.crx}
+                className="inline-flex items-center gap-2 rounded-full bg-flare-500 px-6 py-3 font-semibold text-field-950 shadow-[0_0_32px_-4px] shadow-flare-500/50 transition-all hover:bg-flare-400 hover:shadow-flare-400/60"
               >
-                <path d="M12 3v12" />
-                <path d="m7 11 5 5 5-5" />
-                <path d="M4 21h16" />
-              </svg>
-              {t("hero.ctaPrimary")}
-            </a>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="size-4"
+                  aria-hidden="true"
+                >
+                  <path d="M12 3v12" />
+                  <path d="m7 11 5 5 5-5" />
+                  <path d="M4 21h16" />
+                </svg>
+                {browser && browser.name !== "Chromium"
+                  ? t("hero.ctaFor", { browser: browser.name })
+                  : t("hero.ctaPrimary")}
+              </a>
+            )}
             <a
               href="#install"
               className="rounded-full border border-field-500 px-6 py-3 font-semibold text-star-100 transition-colors hover:border-flare-500/60 hover:text-flare-300"

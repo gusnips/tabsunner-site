@@ -18,6 +18,9 @@ export const ptBR: Locale = {
     titleB: "Ele roda nas abas.",
     sub: "Um agente de IA que dirige seu navegador de verdade — suas abas, suas sessões, suas contas logadas — com qualquer provedor que você escolher. Descreva uma tarefa no painel lateral; o TabRunner lê páginas, clica, digita e navega até o trabalho estar pronto.",
     ctaPrimary: "Baixar para Chromium",
+    ctaFor: "Baixar para {{browser}}",
+    ctaUnsupported:
+      "O TabRunner roda em navegadores com base Chrome no desktop — abra esta página no Chrome, Brave, Edge, Arc, Opera ou Vivaldi para baixar.",
     ctaSecondary: "Como instalar",
     missionLabel: "Descreva uma tarefa",
     missionGo: "Lançar",
@@ -123,7 +126,7 @@ export const ptBR: Locale = {
       "Abra chrome://extensions e ative o Modo de desenvolvedor (canto superior direito).",
       "Arraste o .crx para essa página e confirme, depois clique no cometa na sua barra de ferramentas.",
     ],
-    downloadCrx: "Baixar .crx",
+    downloadCrx: "Baixar",
     caveatsTitle: "Dito com clareza",
     caveats: [
       'O Chrome vai dizer que a extensão "não é da Chrome Web Store" — esperado para um CRX autoassinado.',
@@ -133,7 +136,7 @@ export const ptBR: Locale = {
     zipTitle: "Prefere o zip?",
     zipSteps:
       "Baixe e descompacte, depois chrome://extensions → Modo de desenvolvedor → Carregar sem compactação → selecione a pasta descompactada.",
-    downloadZip: "Baixar .zip",
+    downloadZip: "Baixar ZIP",
     releaseNotes: "Notas de versão",
     storeNote:
       "A listagem da Chrome Web Store está em revisão — a instalação em um clique chega aqui quando for aprovada.",

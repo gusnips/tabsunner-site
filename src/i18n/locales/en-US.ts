@@ -19,6 +19,9 @@ export const enUS = {
     titleB: "It runs the tabs.",
     sub: "An AI agent that drives your real browser — your tabs, your sessions, your logged-in accounts — through any provider you choose. Describe a task in the side panel; TabRunner reads pages, clicks, types and navigates until the job is done.",
     ctaPrimary: "Download for Chromium",
+    ctaFor: "Download for {{browser}}",
+    ctaUnsupported:
+      "TabRunner runs on Chrome-based desktop browsers — open this page in Chrome, Brave, Edge, Arc, Opera or Vivaldi to get it.",
     ctaSecondary: "How to install",
     missionLabel: "Describe a task",
     missionGo: "Launch",
@@ -117,7 +120,7 @@ export const enUS = {
       "Open chrome://extensions and switch on Developer mode (top-right toggle).",
       "Drag the .crx onto that page and confirm, then click the comet in your toolbar.",
     ],
-    downloadCrx: "Download .crx",
+    downloadCrx: "Download",
     caveatsTitle: "Said plainly",
     caveats: [
       'Chrome will say the extension "is not from the Chrome Web Store" — expected for a self-signed CRX.',
@@ -127,7 +130,7 @@ export const enUS = {
     zipTitle: "Prefer the zip?",
     zipSteps:
       "Download and unzip, then chrome://extensions → Developer mode → Load unpacked → select the unzipped folder.",
-    downloadZip: "Download .zip",
+    downloadZip: "Download ZIP",
     releaseNotes: "Release notes",
     storeNote: "The Chrome Web Store listing is in review — one-click install lands here once approved.",
   },
