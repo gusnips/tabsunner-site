@@ -31,9 +31,9 @@ export const esES: Locale = {
       "Busca mi número de seguimiento y pégalo en el formulario de la transportista…",
     ],
     demoHint:
-      "Lanza una — lo que pasa aquí es un cometa cruzando el cielo, y nada más. Para ejecutarla de verdad hace falta la extensión.",
+      "Lanza una — lo que pasa aquí es una bandada de cometas cruzando el cielo, y nada más. Para ejecutarla de verdad hace falta la extensión.",
     demoLaunched:
-      "Ese cometa es la idea en miniatura. Con la extensión instalada, la tarea se ejecuta en tu navegador de verdad.",
+      "Esos cometas son la idea en miniatura. Con la extensión instalada, la tarea se ejecuta en tu navegador de verdad.",
     browsersLabel: "Funciona en",
     chromiumNote:
       "Solo Chromium. Firefox y Safari no tienen la API de entrada confiable — en vez de un botón que no hace nada, recibes una explicación.",

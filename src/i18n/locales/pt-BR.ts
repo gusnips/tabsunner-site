@@ -31,9 +31,9 @@ export const ptBR: Locale = {
       "Ache o meu código de rastreio e cole no formulário da transportadora…",
     ],
     demoHint:
-      "Lance uma — o que acontece aqui é um cometa cruzando o céu, e mais nada. Para rodar de verdade, precisa da extensão.",
+      "Lance uma — o que acontece aqui é um bando de cometas cruzando o céu, e mais nada. Para rodar de verdade, precisa da extensão.",
     demoLaunched:
-      "Esse cometa é a ideia em miniatura. Com a extensão instalada, a tarefa roda no seu navegador mesmo.",
+      "Esses cometas são a ideia em miniatura. Com a extensão instalada, a tarefa roda no seu navegador mesmo.",
     browsersLabel: "Funciona em",
     chromiumNote:
       "Só Chromium. Firefox e Safari não têm a API de entrada confiável — em vez de um botão que não funciona, você recebe uma explicação.",

@@ -2,15 +2,18 @@ import { useEffect, useRef } from "react";
 
 /**
  * The Comet Field — the site's sky. A fixed canvas behind everything:
- * twinkling stars, ambient comet-tabs drifting through, and a bright comet
- * launched whenever a "tabrunner:launch" CustomEvent fires (the hero's
- * mission line). The pointer leaves a faint ion wake.
+ * twinkling stars, ambient comet-tabs drifting through, and a small flock of
+ * bright ones launched whenever a "tabrunner:launch" CustomEvent fires (the
+ * hero's mission line). The pointer leaves a faint ion wake.
  *
  * Every comet head is a tiny browser tab: the product's whole idea in one
- * glyph. prefers-reduced-motion gets a static star field, no comets.
+ * glyph — so one goal throws a spray of tabs, not a single spark.
+ * prefers-reduced-motion gets a static star field, no comets.
  */
 
 const LAUNCH_EVENT = "tabrunner:launch";
+/** Tabs per launch: a lead comet plus its rain. */
+const BURST = 5;
 
 export function launchComet(origin?: { x: number; y: number }) {
   window.dispatchEvent(new CustomEvent(LAUNCH_EVENT, { detail: origin }));
@@ -37,6 +40,7 @@ interface Comet {
   vy: number;
   life: number;
   maxLife: number;
+  size: number;
   bright: boolean;
   trail: TrailPoint[];
 }
@@ -62,6 +66,8 @@ export function CometField() {
     const stars: Star[] = [];
     const comets: Comet[] = [];
     const wake: TrailPoint[] = [];
+    /** The launch rain, staggered on the render clock rather than on timers. */
+    const queued: Array<{ origin: { x: number; y: number }; in: number }> = [];
 
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -101,20 +107,23 @@ export function CometField() {
       drawStars(0);
     };
 
-    const spawnComet = (origin?: { x: number; y: number }) => {
-      if (comets.length > 6) return;
+    // The lead comet flies the clean line; the rain fans out and trails behind it.
+    const spawnComet = (origin?: { x: number; y: number }, lead = false) => {
+      if (comets.length > BURST * 2 + 6) return;
       const bright = Boolean(origin);
       const angle = bright
-        ? -Math.PI / 5 + (Math.random() - 0.5) * 0.2 // launched: up and away
+        ? -Math.PI / 5 + (lead ? 0 : (Math.random() - 0.5) * 0.9) // launched: up and away
         : Math.PI / 7 + (Math.random() - 0.5) * 0.5; // ambient: drifting down-right
-      const speed = bright ? 620 : 200 + Math.random() * 160;
+      const speed = bright ? (lead ? 620 : 380 + Math.random() * 240) : 200 + Math.random() * 160;
+      const spread = bright && !lead ? 26 : 0;
       comets.push({
-        x: origin?.x ?? -40,
-        y: origin?.y ?? Math.random() * height * 0.6,
+        x: (origin?.x ?? -40) + (Math.random() - 0.5) * spread,
+        y: (origin?.y ?? Math.random() * height * 0.6) + (Math.random() - 0.5) * spread,
         vx: Math.cos(angle) * speed,
         vy: Math.sin(angle) * speed,
         life: 0,
         maxLife: bright ? 2.6 : 3.8,
+        size: bright ? (lead ? 1.25 : 0.7 + Math.random() * 0.3) : 0.9,
         bright,
         trail: [],
       });
@@ -172,7 +181,7 @@ export function CometField() {
         ctx.stroke();
       }
       const angle = Math.atan2(c.vy, c.vx);
-      drawTab(c.x, c.y, angle, (c.bright ? 1.25 : 0.9) * fade, c.bright);
+      drawTab(c.x, c.y, angle, c.size * fade, c.bright);
       return c.life < c.maxLife && c.x < width + 60 && c.y < height + 60 && c.y > -80;
     };
 
@@ -194,6 +203,13 @@ export function CometField() {
       ctx.clearRect(0, 0, width, height);
       drawStars(now);
       drawWake(dt);
+      for (let i = queued.length - 1; i >= 0; i--) {
+        queued[i].in -= dt;
+        if (queued[i].in <= 0) {
+          spawnComet(queued[i].origin);
+          queued.splice(i, 1);
+        }
+      }
       spawnIn -= dt * 1000;
       if (spawnIn <= 0) {
         spawnComet();
@@ -207,7 +223,11 @@ export function CometField() {
 
     const onLaunch = (e: Event) => {
       const origin = (e as CustomEvent<{ x: number; y: number }>).detail;
-      spawnComet(origin);
+      spawnComet(origin, true);
+      if (!origin) return; // no origin, no flock — one ambient comet is the whole event
+      for (let i = 1; i < BURST; i++) {
+        queued.push({ origin, in: i * 0.085 + Math.random() * 0.05 });
+      }
     };
     const onPointer = (e: PointerEvent) => {
       wake.push({ x: e.clientX, y: e.clientY, age: 0 });

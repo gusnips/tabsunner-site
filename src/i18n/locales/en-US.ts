@@ -31,8 +31,8 @@ export const enUS = {
       "Copy this week's numbers from the analytics tab into my sheet…",
       "Find my tracking number and paste it into the carrier's claim form…",
     ],
-    demoHint: "Launch one — it sends a comet across the sky, and nothing else. The real run needs the extension.",
-    demoLaunched: "That comet is the idea in miniature. Installed, it runs the task in your real browser.",
+    demoHint: "Launch one — it throws a flock of comet-tabs across the sky, and nothing else. The real run needs the extension.",
+    demoLaunched: "Those comet-tabs are the idea in miniature. Installed, it runs the task in your real browser.",
     browsersLabel: "Runs on",
     chromiumNote:
       "Chromium only. Firefox and Safari have no trusted-input API, so they get an explanation, not a dead button.",
