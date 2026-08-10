@@ -4,10 +4,10 @@
  */
 export const LINKS = {
   /**
-   * Primary download. The signed CRX is still a release asset, but Chrome
-   * refuses drag-and-drop CRX installs without a Web Store publisher proof
-   * (CRX_REQUIRED_PROOF_MISSING) — so the unpacked ZIP is the only self-hosted
-   * install that works. When the listing clears review, `store` takes over.
+   * Primary download, and the only self-hosted install that works: Chrome
+   * installs a CRX only through the store's own flow, so the extension stopped
+   * publishing one after v0.2.3. When the listing clears review, `store` takes
+   * over — there is no CRX URL to move to, now or later.
    */
   zip: "https://github.com/gusnips/tabrunner/releases/latest/download/tabrunner-latest-chrome.zip",
   releases: "https://github.com/gusnips/tabrunner/releases/latest",
@@ -18,7 +18,7 @@ export const LINKS = {
   privacy: "/privacy",
   terms: "/terms",
   mcpDocs: "https://github.com/gusnips/tabrunner/blob/main/docs/mcp.md",
-  /** Live once the listing is approved; until then the CRX is the primary install. */
+  /** Live once the listing is approved; until then rendered as plain text, not a dead button. */
   store: "https://chromewebstore.google.com/detail/ilnohobdcigbmlikjbkdpbkhciephdle",
 } as const;
 

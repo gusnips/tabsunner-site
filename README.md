@@ -48,14 +48,22 @@ these three stable URLs:
 | What | URL |
 | --- | --- |
 | Zip, loaded unpacked (primary CTA) | `releases/latest/download/tabrunner-latest-chrome.zip` |
-| Signed CRX (**not linked** — see below) | `releases/latest/download/tabrunner-latest.crx` |
 | Release notes | `releases/latest` |
 
-**The CRX is not installable by drag-and-drop.** Chrome rejects any sideloaded CRX without a
-Web Store publisher proof (`CRX_REQUIRED_PROOF_MISSING`), so the site links the zip only and
-says in the caveats that the release asset won't install that way. Store approval does not
-change this — a GitHub-hosted CRX stays unusable — so the flip when the listing lands is
-**zip → store link**, not zip → CRX. Until then the store link is plain text, not a dead button.
+**There is no CRX, and there is no CRX link to wait for.** The extension stopped publishing one
+in v0.2.3: Chrome only installs a CRX that arrives through the store's own flow, and the store
+signs with a key only Google holds, so a self-signed CRX was refused
+(`CRX_REQUIRED_PROOF_MISSING`) at one end and the store's own CRX has no hotlinkable URL at the
+other. Chrome's update service (`clients2.google.com/service/update2/crx?...id=<extension id>`)
+is not a distribution channel — it 404s for an unpublished item, and what it returns still won't
+install from a web page. So the flip when the listing lands is **zip → the listing URL**
+(`LINKS.store`, an *Add to Chrome* button), never zip → any CRX. Until then the store link is
+plain text, not a dead button.
+
+The install caveat still tells visitors the `.crx` on the releases page won't drag-and-drop
+install — true for v0.2.2 and earlier, which still carry that asset. It retires with the store
+flip, along with the "installs as a separate extension ID" caveat: the extension now pins its
+manifest key to the store item's, so the zip and the store install share one ID.
 
 ## Assets
 

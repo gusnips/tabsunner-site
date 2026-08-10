@@ -39,9 +39,10 @@ Two claims a neighboring product cannot copy:
 - Distribution: GitHub Releases (`gusnips/tabrunner`) until the Chrome Web Store listing is
   approved (v0.1.0 withdrawn for resubmission with a new permission; store ID assigned:
   `ilnohobdcigbmlikjbkdpbkhciephdle`). Primary CTA today is the zip, loaded unpacked — Chrome
-  refuses sideloaded CRX installs without a Web Store proof, so the CRX asset is unlinked; the
-  store link flips to primary once approved. The site must **never hardcode a version number** —
-  only `releases/latest` aliases.
+  installs a CRX only through the store's own flow, so no CRX ships at all since v0.2.3; the store
+  link flips to primary once approved. The zip and the store install now share that one ID, since
+  the extension pins its manifest key to the store item's. The site must **never hardcode a
+  version number** — only `releases/latest` aliases.
 - Also drivable over MCP from Claude Code/Desktop or any MCP client (local daemon bridge).
 - Chromium-only by design: Chrome, Brave, Edge, Arc, Opera, Vivaldi. Firefox/Safari have no
   `chrome.debugger` equivalent — say so, don't offer dead buttons.
@@ -50,10 +51,10 @@ Two claims a neighboring product cannot copy:
 ## Capabilities and Constraints
 
 - Site stack: Vite + React 19 + Tailwind CSS 4 + bun, static, deployed on its own cadence.
-- Hard requirements from `chrome/docs/website-brief.md`: hotlink only the three stable release
-  URLs (`tabrunner-latest.crx`, `tabrunner-latest-chrome.zip`, `releases/latest`); state the
-  sideload caveats plainly (developer-mode warning, folder must stay put, separate extension ID
-  from the future store item, no auto-update); link the privacy doc
+- Hard requirements from `chrome/docs/website-brief.md`: hotlink only the stable release URLs
+  (`tabrunner-latest-chrome.zip`, `releases/latest`) — never a CRX, which no longer ships and
+  could not be installed from a link anyway; state the sideload caveats plainly (developer-mode
+  warning, folder must stay put, no auto-update); link the privacy doc
   (`github.com/gusnips/tabrunner/blob/main/PRIVACY.md`) up front — an agent that drives your
   logged-in browser must answer the data question immediately.
 
