@@ -38,7 +38,7 @@ Two claims a neighboring product cannot copy:
 
 - Distribution: GitHub Releases (`gusnips/tabrunner`) until the Chrome Web Store listing is
   approved (v0.1.0 withdrawn for resubmission with a new permission; store ID assigned:
-  `gkblgkcofolbpcbafkdhiihfbpjhdpgh`). Primary CTA today is the zip, loaded unpacked — Chrome
+  `ilnohobdcigbmlikjbkdpbkhciephdle`). Primary CTA today is the zip, loaded unpacked — Chrome
   refuses sideloaded CRX installs without a Web Store proof, so the CRX asset is unlinked; the
   store link flips to primary once approved. The site must **never hardcode a version number** —
   only `releases/latest` aliases.

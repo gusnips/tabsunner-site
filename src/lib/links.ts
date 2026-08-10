@@ -19,7 +19,7 @@ export const LINKS = {
   terms: "/terms",
   mcpDocs: "https://github.com/gusnips/tabrunner/blob/main/docs/mcp.md",
   /** Live once the listing is approved; until then the CRX is the primary install. */
-  store: "https://chromewebstore.google.com/detail/gkblgkcofolbpcbafkdhiihfbpjhdpgh",
+  store: "https://chromewebstore.google.com/detail/ilnohobdcigbmlikjbkdpbkhciephdle",
 } as const;
 
 export const CHROMIUM_BROWSERS = ["Chrome", "Brave", "Edge", "Arc", "Opera", "Vivaldi"] as const;
