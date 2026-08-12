@@ -36,7 +36,7 @@ Two claims a neighboring product cannot copy:
 
 ## Operating Context
 
-- Distribution: GitHub Releases (`gusnips/tabrunner`) until the Chrome Web Store listing is
+- Distribution: GitHub Releases (`tabrunner/tabrunner`) until the Chrome Web Store listing is
   approved (v0.1.0 withdrawn for resubmission with a new permission; store ID assigned:
   `ilnohobdcigbmlikjbkdpbkhciephdle`). Primary CTA today is the zip, loaded unpacked — Chrome
   installs a CRX only through the store's own flow, so no CRX ships at all since v0.2.3; the store
@@ -55,7 +55,7 @@ Two claims a neighboring product cannot copy:
   (`tabrunner-latest-chrome.zip`, `releases/latest`) — never a CRX, which no longer ships and
   could not be installed from a link anyway; state the sideload caveats plainly (developer-mode
   warning, folder must stay put, no auto-update); link the privacy doc
-  (`github.com/gusnips/tabrunner/blob/main/PRIVACY.md`) up front — an agent that drives your
+  (`github.com/tabrunner/tabrunner/blob/main/PRIVACY.md`) up front — an agent that drives your
   logged-in browser must answer the data question immediately.
 
 ## Brand Commitments

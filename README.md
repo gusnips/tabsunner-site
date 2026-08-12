@@ -1,6 +1,6 @@
 # tabrunner.app
 
-Marketing and download site for [TabRunner](https://github.com/gusnips/tabrunner) — a Chromium
+Marketing and download site for [TabRunner](https://github.com/tabrunner/tabrunner) — a Chromium
 extension that lets an LLM drive your real browser. Static site, deployed on its own cadence,
 independent of the extension repo.
 

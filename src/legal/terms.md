@@ -13,8 +13,8 @@ supervision is yours.
 ## 1. The software
 
 TabRunner is free, open-source software licensed under the MIT License (see
-[LICENSE](LICENSE)). These terms cover your use of the published builds (the CRX/zip releases
-and, once approved, the Chrome Web Store listing). The MIT license governs the code itself.
+[LICENSE](LICENSE)). These terms cover your use of the published builds (the zip releases and,
+once approved, the Chrome Web Store listing). The MIT license governs the code itself.
 
 ## 2. No service
 
@@ -64,6 +64,6 @@ the version that carries it.
 
 ## 8. Contact
 
-This project is maintained on GitHub at [gusnips/tabrunner](https://github.com/gusnips/tabrunner).
+This project is maintained on GitHub at [tabrunner/tabrunner](https://github.com/tabrunner/tabrunner).
 Questions about these terms: open an issue
-([github.com/gusnips/tabrunner/issues](https://github.com/gusnips/tabrunner/issues)).
+([github.com/tabrunner/tabrunner/issues](https://github.com/tabrunner/tabrunner/issues)).

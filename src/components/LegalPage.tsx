@@ -13,7 +13,7 @@ import termsMd from "../legal/terms.md?raw";
 
 const DOCS = { privacy: privacyMd, terms: termsMd } as const;
 
-const GITHUB_BLOB = "https://github.com/gusnips/tabrunner/blob/main/";
+const GITHUB_BLOB = "https://github.com/tabrunner/tabrunner/blob/main/";
 
 /**
  * The docs cross-link each other and the repo with relative paths
@@ -131,7 +131,7 @@ export function LegalPage({ doc }: { doc: keyof typeof DOCS }) {
             rel="noreferrer"
             className="text-flare-300 underline decoration-flare-500/40 underline-offset-4 transition-colors hover:text-flare-200"
           >
-            gusnips/tabrunner
+            tabrunner/tabrunner
           </a>
         </p>
       </main>

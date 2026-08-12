@@ -17,8 +17,8 @@ const siteRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = join(siteRoot, "src", "legal");
 
 const DOCS = {
-  privacy: "https://raw.githubusercontent.com/gusnips/tabrunner/main/PRIVACY.md",
-  terms: "https://raw.githubusercontent.com/gusnips/tabrunner/main/TERMS.md",
+  privacy: "https://raw.githubusercontent.com/tabrunner/tabrunner/main/PRIVACY.md",
+  terms: "https://raw.githubusercontent.com/tabrunner/tabrunner/main/TERMS.md",
 } as const;
 
 mkdirSync(outDir, { recursive: true });

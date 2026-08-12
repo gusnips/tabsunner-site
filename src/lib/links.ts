@@ -9,15 +9,15 @@ export const LINKS = {
    * publishing one after v0.2.3. When the listing clears review, `store` takes
    * over — there is no CRX URL to move to, now or later.
    */
-  zip: "https://github.com/gusnips/tabrunner/releases/latest/download/tabrunner-latest-chrome.zip",
-  releases: "https://github.com/gusnips/tabrunner/releases/latest",
-  repo: "https://github.com/gusnips/tabrunner",
-  issues: "https://github.com/gusnips/tabrunner/issues",
-  license: "https://github.com/gusnips/tabrunner/blob/main/LICENSE",
+  zip: "https://github.com/tabrunner/tabrunner/releases/latest/download/tabrunner-latest-chrome.zip",
+  releases: "https://github.com/tabrunner/tabrunner/releases/latest",
+  repo: "https://github.com/tabrunner/tabrunner",
+  issues: "https://github.com/tabrunner/tabrunner/issues",
+  license: "https://github.com/tabrunner/tabrunner/blob/main/LICENSE",
   // Legal docs render in-site (synced from the chrome repo by `bun run sync:legal`).
   privacy: "/privacy",
   terms: "/terms",
-  mcpDocs: "https://github.com/gusnips/tabrunner/blob/main/docs/mcp.md",
+  mcpDocs: "https://github.com/tabrunner/tabrunner/blob/main/docs/mcp.md",
   /** Live once the listing is approved; until then rendered as plain text, not a dead button. */
   store: "https://chromewebstore.google.com/detail/ilnohobdcigbmlikjbkdpbkhciephdle",
 } as const;
