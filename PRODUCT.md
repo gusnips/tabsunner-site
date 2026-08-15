@@ -36,15 +36,13 @@ Two claims a neighboring product cannot copy:
 
 ## Operating Context
 
-- Distribution: GitHub Releases (`tabrunner/tabrunner`) until the Chrome Web Store listing is
-  approved (store ID assigned: `ilnohobdcigbmlikjbkdpbkhciephdle`; v0.2.3 was rejected
-  2026-08-12 for keyword spam in the listing text — a metadata-only fix is staged in
-  `chrome/docs/store-listing.md` for resubmission of the same upload; site copy now says "not
-  live yet", never a review state that can go stale). Primary CTA today is the zip, loaded
-  unpacked — Chrome installs a CRX only through the store's own flow, so no CRX ships at all
-  since v0.2.3; the store link flips to primary once approved. The zip and the store install
-  share that one ID, since the extension pins its manifest key to the store item's — Chrome
-  refuses to run both, so the unpacked build must be removed *before* the store install. The
+- Distribution: the Chrome Web Store listing is approved **2026-08-15** and is now the
+  primary install (`LINKS.store` flips to an *Add to Chrome* button); GitHub Releases (`tabrunner/tabrunner`)
+  remains the unpacked zip fallback. Chrome installs a CRX only through the store's own flow, so
+  no CRX ships at all. The zip and the store install share one ID, since the extension pins its
+  manifest key to the store item's — Chrome refuses to run both, so the unpacked build must be
+  removed *before* the store install. The store description is plain text (CWS renders no
+  Markdown in it — `chrome/docs/store-listing.md` learned this the hard way at approval). The
   site must **never hardcode a version number** — only `releases/latest` aliases.
 - Also drivable over MCP from Claude Code/Desktop or any MCP client (local daemon bridge).
 - Chromium-only by design: Chrome, Brave, Edge, Arc, Opera, Vivaldi. Firefox/Safari have no
