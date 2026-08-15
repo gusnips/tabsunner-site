@@ -20,12 +20,17 @@ export const LINKS = {
   terms: "/terms",
   mcpDocs: "https://github.com/tabrunner/tabrunner/blob/main/docs/mcp.md",
   /**
-   * Live since 2026-08-15, and the primary CTA everywhere. Link the *listing*,
-   * never the CRX behind it: Chrome's update service
+   * Live since 2026-08-15, and the primary CTA everywhere.
+   *
+   * Deliberately the listing, not the CRX behind it. Chrome's update service
    * (`clients2.google.com/service/update2/crx`) does serve the store-signed
-   * build, but it needs a `prodversion` (a hardcoded Chrome version), redirects
-   * to a per-release opaque blob URL, and is an internal update channel Google
-   * doesn't support for redistribution.
+   * build from a stable URL, and dragging that file in works — it carries the
+   * publisher proof a self-built CRX can never have. We skip it because it's an
+   * undocumented internal channel, it serves the store's last-approved build
+   * rather than `releases/latest`, and it trades one click for a download plus
+   * a drag with none of the listing's trust signals. README's "The store CRX
+   * endpoint" section has the working recipe and the cases that would justify
+   * adding it *beside* this link (CWS-blocked regions, offline installs).
    */
   store: "https://chromewebstore.google.com/detail/tabrunner/ilnohobdcigbmlikjbkdpbkhciephdle",
 } as const;

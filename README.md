@@ -50,22 +50,52 @@ aliases only** — never a hardcoded version number, anywhere.
 | Zip, loaded unpacked (secondary) | `releases/latest/download/tabrunner-latest-chrome.zip` |
 | Release notes | `releases/latest` |
 
-**Link the listing, never a CRX — not ours, and not the store's.** No CRX has shipped since
-v0.2.3, and none should: a CRX3 only installs if its header carries a `sha256_with_ecdsa`
-*publisher proof* signed by a key only Google holds. Pinning the manifest `key` reproduces the
-extension **ID**, not that proof, so a self-built CRX fails with `CRX_REQUIRED_PROOF_MISSING`
-however it is signed.
-
-The store's own CRX is real and does carry the proof — Chrome's update service
-(`clients2.google.com/service/update2/crx?response=redirect&prodversion=<chrome ver>&x=id%3D<id>%26uc`)
-returns it — but it stays unlinked: it needs a hardcoded *Chrome* version, 302s to a per-release
-opaque blob URL (so there is no stable alias), is an internal update channel Google does not
-support for redistribution, and serves whatever build the store last approved rather than
-`releases/latest`. A one-click listing beats a downloaded file a user must then drag somewhere.
+**We never build a CRX ourselves.** None has shipped since v0.2.3, and none should: a CRX3
+installs only if its header carries a `sha256_with_ecdsa` *publisher proof*, signed by a key
+only Google holds at publish time. Pinning the manifest `key` reproduces the extension **ID**,
+not that proof — so a self-built CRX fails with `CRX_REQUIRED_PROOF_MISSING` however it is
+signed. That was the bug behind the 2026-08 zip flip.
 
 Because the extension pins its manifest key to the store item's, the zip and the store install
 **share one extension ID** — Chrome refuses to run both, so the install caveats tell anyone on
 the unpacked build to remove it before installing from the store.
+
+### The store CRX endpoint — deliberately not linked
+
+The store's own CRX *does* carry the proof, and Chrome's update service will hand it over. This
+works today (verified 2026-08-15 against our own item):
+
+```bash
+# Required: prodversion, acceptformat, and id. Everything else is optional —
+# `prod` can be dropped, and installsource/uc are statistics only.
+# Omitting prodversion or acceptformat returns 204 No Content, not an error.
+curl -L "https://clients2.google.com/service/update2/crx\
+?response=redirect&prod=chromium&prodversion=143.0.7499.41&acceptformat=crx3\
+&x=id%3D<extension id>%26installsource%3Dondemand%26uc"
+# → 302 to clients2.googleusercontent.com/crx/blobs/<opaque>/<ID>_0_2_1_0.crx
+```
+
+The `clients2` URL is stable; only its redirect target moves per release, and a browser follows
+that transparently. A stale `prodversion` doesn't rot either — `90.0` still serves. So the
+honest reason we don't link it is **not** that it breaks:
+
+- It's an undocumented internal update channel with no support commitment for redistribution.
+  It can change or start gating without notice, and nothing tells us when.
+- It serves the **store's** last-approved build, which lags `releases/latest` (0.2.1 vs v0.2.8
+  on the day of the flip) — so it would be a "Download" that is neither newest nor the zip.
+- It costs the visitor a download, a `chrome://extensions` trip and a drag, where the listing
+  costs one click.
+- It drops every trust signal — verified publisher, reviews, the permissions disclosure. For an
+  extension that asks for debugger-level access, those are the last things to throw away.
+
+**When it would earn its place**, as a clearly-labelled secondary link and never the primary CTA:
+visitors in regions where the Chrome Web Store is blocked (the real reason some well-known
+extension pages offer a direct CRX), offline or air-gapped installs, and pinning a specific build
+for testing. If that day comes, add it beside the zip in `LINKS`, not in place of `store`.
+
+Edge publishes an equivalent (`edge.microsoft.com/extensionwebstorebase/v1/crx?response=redirect
+&x=id%3D<id>%26installsource%3Dondemand%26uc`, no `prodversion` needed) — untested here, since
+TabRunner has no Edge listing.
 
 ## Assets
 
