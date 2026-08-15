@@ -28,7 +28,6 @@
   /* Telemetry — amber measures; if it's amber, the agent is working */
   --color-tel-300: #fcd34d;
   --color-tel-400: #fbbf24;
-  --color-tel-500: #f59e0b;
 
   /* Starlight — text, tinted from the sky, never pure gray */
   --color-star-100: #e8eefb;
@@ -96,7 +95,7 @@ body {
   background-image: linear-gradient(
     100deg,
     var(--color-tel-400) 30%,
-    var(--color-flare-200) 50%,
+    var(--color-flare-300) 50%,
     var(--color-tel-400) 70%
   );
   background-size: 250% auto;

@@ -18,9 +18,9 @@ TabRunner is a Chromium extension that lets an LLM drive the user's **real** bro
 sandbox. The user describes a task in the side panel; TabRunner reads pages (accessibility-tree
 snapshots), clicks and types (trusted input via the Chrome DevTools Protocol), and navigates until
 the job is done. Tagline: **"You give the goal. It runs the tabs."** (2026-08, user-confirmed;
-replaces "You decide. It does the legwork." — the extension README/OG still carry the old line
-until the redesign). Success for the site: a visitor
-understands what it is in seconds, trusts it enough to install, and completes the install.
+carried everywhere now — hero, footer, OG card, and the extension README all speak it.) Success
+for the site: a visitor understands what it is in seconds, trusts it enough to install, and
+completes the install.
 
 ## Positioning
 
@@ -37,12 +37,15 @@ Two claims a neighboring product cannot copy:
 ## Operating Context
 
 - Distribution: GitHub Releases (`tabrunner/tabrunner`) until the Chrome Web Store listing is
-  approved (v0.1.0 withdrawn for resubmission with a new permission; store ID assigned:
-  `ilnohobdcigbmlikjbkdpbkhciephdle`). Primary CTA today is the zip, loaded unpacked — Chrome
-  installs a CRX only through the store's own flow, so no CRX ships at all since v0.2.3; the store
-  link flips to primary once approved. The zip and the store install now share that one ID, since
-  the extension pins its manifest key to the store item's. The site must **never hardcode a
-  version number** — only `releases/latest` aliases.
+  approved (store ID assigned: `ilnohobdcigbmlikjbkdpbkhciephdle`; v0.2.3 was rejected
+  2026-08-12 for keyword spam in the listing text — a metadata-only fix is staged in
+  `chrome/docs/store-listing.md` for resubmission of the same upload; site copy now says "not
+  live yet", never a review state that can go stale). Primary CTA today is the zip, loaded
+  unpacked — Chrome installs a CRX only through the store's own flow, so no CRX ships at all
+  since v0.2.3; the store link flips to primary once approved. The zip and the store install
+  share that one ID, since the extension pins its manifest key to the store item's — Chrome
+  refuses to run both, so the unpacked build must be removed *before* the store install. The
+  site must **never hardcode a version number** — only `releases/latest` aliases.
 - Also drivable over MCP from Claude Code/Desktop or any MCP client (local daemon bridge).
 - Chromium-only by design: Chrome, Brave, Edge, Arc, Opera, Vivaldi. Firefox/Safari have no
   `chrome.debugger` equivalent — say so, don't offer dead buttons.
@@ -73,14 +76,12 @@ Two claims a neighboring product cannot copy:
 ## Evidence on Hand
 
 - `chrome/docs/screenshots/`: 4 real 1280×800 product shots (side panel, chat/run, providers,
-  second chat). **Stale as brand proof (2026-08-09):** they show the pre-rename build — the
-  product is named "Regent"/"Regentry" in the panel chrome, wearing the retired purple and the
-  old crown mark, and one shot's page content is a competitor's comparison article. Retake
-  against the current build before the site is promoted. The site labels them as old-brand in
-  the meantime (`shots.note`).
-- `site/public/og.png`: 1200×630 social card, regenerated 2026-08-09 in comet-ice with the
+  status widget) — retaken in the comet-burn brand (chrome d865dea, 2026-08-09) and synced here as
+  webp the same day; `shots.note` tells visitors they're the current build.
+- `site/public/og.png`: 1200×630 social card, regenerated 2026-08-09 in comet-burn with the
   current tagline — authored by `site/scripts/gen-og.ts`, no longer synced from the extension.
-- `chrome/public/icon/`: comet tile PNGs (16–128), still the retired purple/crown.
+- `chrome/public/icon/`: comet-tab tiles on the deep-field ground (16–128), regenerated from
+  `chrome/src/shared/logo.ts` — the retired purple/crown lives only in git history.
 - `chrome/README.md`, `chrome/docs/mcp.md`, `chrome/docs/store-listing.md`: copy source.
 - `chrome/PRIVACY.md`: privacy policy (linked on GitHub).
 - No testimonials, customer logos, usage numbers, or pricing exist — never fabricate them.

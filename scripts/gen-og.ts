@@ -1,5 +1,5 @@
 /**
- * Generates public/og.png (1200×630 social card) in the comet-ice brand:
+ * Generates public/og.png (1200×630 social card) in the comet-burn brand:
  * deep-field ground, star field, the comet-tab mark with its burn trail,
  * the tagline in Unbounded, details in Figtree. Run after brand changes:
  *   bun run scripts/gen-og.ts

@@ -17,8 +17,8 @@
  * run console right; comet field canvas behind everything.
  * FORM: grounded candidate 4 — browser chrome as compositional material —
  * assigned by seed f5e6e750 and fused with the user-pinned dark-cosmic
- * energy and the user-chosen comet-ice palette (replacing the retired
- * royal purple; extension redesign follows this palette).
+ * energy and the comet-burn palette (the retired royal purple's
+ * replacement — the extension wears the same one).
  */
 
 import { CometField } from "./components/CometField";

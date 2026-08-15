@@ -132,7 +132,10 @@ Drenched dark: the surface IS the night sky; emerald and amber are light sources
 ### Named Rules
 
 **The Two Lights Rule.** Only two hues emit light on this page: emerald (motion) and amber
-(measurement). Any third saturated hue is a bug, not a flourish.
+(measurement). Any third saturated hue is a bug, not a flourish. The one sanctioned exception is
+the launched comet's heat: a bright comet's youngest trail segments burn amber for their first
+~0.18s before cooling to emerald — that is the comet igniting inside the page's one authored
+moment, not a measurement.
 
 **The No-Purple Rule.** The retired royal-purple brand (`#8b5cf6` family) must not appear in new
 work; the cyan that briefly replaced it (2026-08, first pass) is retired with it. Both survive

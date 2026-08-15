@@ -104,15 +104,15 @@ export const enUS = {
     sub: "Not a browser takeover — a side panel that works alongside the page you're on.",
     captions: [
       "The side panel, before a task",
-      "Mid-run: the plan, the steps, the page",
+      "A finished run: plan, tool trace, summary — and the tab's badge",
       "Providers: presets or any compatible endpoint",
-      "A second chat, answering in your language",
+      "The status pill: the run works while you keep reading",
     ],
     note: "Screenshots from the current build — captured automatically, so they never lag a redesign.",
   },
   install: {
     title: "The flight plan",
-    sub: "Two minutes, three steps, no account. Until the Chrome Web Store listing clears review, this is the way in.",
+    sub: "Two minutes, three steps, no account. Until the Chrome Web Store listing goes live, this is the way in.",
     badge: "developer mode",
     loadTitle: "Load the unpacked build",
     steps: [
@@ -126,11 +126,11 @@ export const enUS = {
       "Keep the unzipped folder where it is — Chrome loads the extension from that path, so moving or deleting it uninstalls it.",
       "Chrome warns about developer-mode extensions on every startup — expected for an unpacked build, and gone with the store version.",
       "No auto-update: a new version is a re-download over the same folder, then Reload on chrome://extensions.",
-      "The .crx on the releases page won't install by drag-and-drop — Chrome now demands a Web Store signature on any CRX. Use the ZIP.",
-      "When the store listing ships, it installs as a separate extension (different signing key) — remove the unpacked one after migrating; settings don't carry over.",
+      "There's no CRX to drag in — Chrome only installs those through the store's own flow. The ZIP is the build.",
+      "When the store listing ships, it installs under the same extension ID — Chrome refuses to run both, so remove the unpacked build first; settings don't carry over.",
     ],
     releaseNotes: "Release notes",
-    storeNote: "The Chrome Web Store listing is in review — one-click install lands here once approved.",
+    storeNote: "The Chrome Web Store listing isn't live yet — one-click install lands here once it's approved.",
   },
   privacy: {
     title: "No ground station",
@@ -161,11 +161,12 @@ export const enUS = {
     productHeading: "Product",
     projectHeading: "Project",
     download: "Download",
-    storeSoon: "Chrome Web Store — in review",
+    storeSoon: "Chrome Web Store — coming soon",
     issues: "Issues",
     privacyLink: "Privacy policy",
     termsLink: "Terms of use",
     mcpDocs: "MCP docs",
+    copyright: "© 2026 Gus",
   },
 };
 

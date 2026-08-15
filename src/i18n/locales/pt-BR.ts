@@ -110,15 +110,15 @@ export const ptBR: Locale = {
     sub: "Ele não toma conta do navegador — é um painel lateral que trabalha ao lado da página em que você está.",
     captions: [
       "O painel lateral, antes de começar uma tarefa",
-      "Durante a execução: o plano, os passos, a página",
+      "Uma execução concluída: plano, ações, resumo — e a marca na aba",
       "Provedores: presets ou qualquer endpoint compatível",
-      "Uma segunda conversa, respondendo no seu idioma",
+      "A pílula de status: a tarefa trabalha enquanto você continua lendo",
     ],
     note: "Capturas da versão atual — geradas automaticamente, então nunca ficam desatualizadas depois de um redesign.",
   },
   install: {
     title: "O plano de voo",
-    sub: "Dois minutos, três passos, sem cadastro. Enquanto a página na Chrome Web Store não sai da análise, é por aqui que se instala.",
+    sub: "Dois minutos, três passos, sem cadastro. Enquanto a página na Chrome Web Store não entra no ar, é por aqui que se instala.",
     badge: "modo do desenvolvedor",
     loadTitle: "Carregue a versão descompactada",
     steps: [
@@ -132,12 +132,12 @@ export const ptBR: Locale = {
       "Deixe a pasta descompactada onde está — o Chrome carrega a extensão daquele caminho, então mover ou apagar a pasta desinstala a extensão.",
       "O Chrome avisa sobre extensões em modo do desenvolvedor toda vez que abre — é o esperado para uma versão descompactada, e some com a versão da loja.",
       "Não tem atualização automática: cada versão nova é baixar de novo por cima da mesma pasta e clicar em Atualizar em chrome://extensions.",
-      "O .crx da página de releases não instala arrastando — o Chrome agora exige assinatura da Web Store em qualquer CRX. Use o ZIP.",
-      "Quando a versão da loja sair, ela instala como uma extensão separada (a chave de assinatura é outra) — depois de migrar, remova a descompactada; as configurações não vão junto.",
+      "Não existe CRX para arrastar — o Chrome só instala esse formato pelo fluxo da loja. O ZIP é o produto.",
+      "Quando a versão da loja sair, ela instala sob o mesmo ID de extensão — o Chrome se recusa a rodar as duas, então remova a descompactada antes; as configurações não vão junto.",
     ],
     releaseNotes: "Notas da versão",
     storeNote:
-      "A página na Chrome Web Store está em análise — quando for aprovada, a instalação em um clique aparece aqui.",
+      "A página na Chrome Web Store ainda não está no ar — quando for aprovada, a instalação em um clique aparece aqui.",
   },
   privacy: {
     title: "Sem estação em terra",
@@ -168,10 +168,11 @@ export const ptBR: Locale = {
     productHeading: "Produto",
     projectHeading: "Projeto",
     download: "Baixar",
-    storeSoon: "Chrome Web Store — em análise",
+    storeSoon: "Chrome Web Store — em breve",
     issues: "Issues",
     privacyLink: "Política de privacidade",
     termsLink: "Termos de uso",
     mcpDocs: "Docs do MCP",
+    copyright: "© 2026 Gus",
   },
 };
