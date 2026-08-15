@@ -6,12 +6,13 @@ import { GithubMark } from "./GithubMark";
 export function Footer() {
   const { t } = useTranslation();
 
+  // The store listing is live, so it leads and the zip follows as the
+  // developer-mode path — no more plain-text placeholder standing in for it.
   const productLinks = [
-    { label: t("footer.download"), href: LINKS.zip },
+    { label: t("footer.store"), href: LINKS.store },
+    { label: t("footer.downloadZip"), href: LINKS.zip },
     { label: t("install.releaseNotes"), href: LINKS.releases },
   ];
-  // The store listing isn't live yet: plain text until it is, never a dead link.
-  const storeNote = t("footer.storeSoon");
   const projectLinks = [
     { label: "GitHub", href: LINKS.repo },
     { label: t("footer.issues"), href: LINKS.issues },
@@ -63,7 +64,6 @@ export function Footer() {
                   </a>
                 </li>
               ))}
-              <li className="text-star-500">{storeNote}</li>
             </ul>
           </nav>
 

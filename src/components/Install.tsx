@@ -2,11 +2,12 @@ import { useTranslation } from "react-i18next";
 import { LINKS } from "../lib/links";
 
 /**
- * The flight plan — install steps as a launch sequence, caveats said plainly
- * beside them. Only stable `releases/latest` URLs are linked; no version
- * numbers anywhere (the download contract in chrome/docs/website-brief.md).
- * One path only: Chrome rejects sideloaded CRX files, so the ZIP loaded
- * unpacked is the install until the store listing is live.
+ * The flight plan — getting running as a launch sequence, caveats said plainly
+ * beside it. Since the store listing went live the install itself is one click,
+ * so the three stages cover what's actually left: add it, open the panel, point
+ * it at a provider. The ZIP stays as the developer-mode path (same extension
+ * ID, so it can't sit alongside the store build); no version numbers anywhere,
+ * per the download contract in chrome/docs/website-brief.md.
  */
 export function Install() {
   const { t } = useTranslation();
@@ -26,7 +27,7 @@ export function Install() {
         {/* launch sequence */}
         <div className="flex h-full min-w-0 flex-col rounded-2xl border border-field-500/60 bg-field-800/60 p-6 backdrop-blur-sm sm:p-8">
           <div className="flex items-center gap-3">
-            <h3 className="text-lg font-semibold text-star-100">{t("install.loadTitle")}</h3>
+            <h3 className="text-lg font-semibold text-star-100">{t("install.storeTitle")}</h3>
             <span className="rounded-full bg-flare-500/15 px-2.5 py-0.5 font-mono text-[10px] tracking-wider text-flare-300 uppercase">
               {t("install.badge")}
             </span>
@@ -50,12 +51,14 @@ export function Install() {
             ))}
           </ol>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-8 mb-8 flex flex-wrap items-center gap-3">
             <a
-              href={LINKS.zip}
+              href={LINKS.store}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-flare-500 px-6 py-3 font-semibold text-field-950 shadow-[0_0_32px_-4px] shadow-flare-500/50 transition-all hover:bg-flare-400 hover:shadow-flare-400/60"
             >
-              {t("install.download")}
+              {t("install.storeCta")}
             </a>
             <a
               href={LINKS.releases}
@@ -67,10 +70,24 @@ export function Install() {
             </a>
           </div>
 
-          {/* prose, so not mono — see DESIGN.md's Measurement Rule */}
-          <p className="mt-auto pt-8 text-xs leading-relaxed text-star-500">
-            {t("install.storeNote")}
-          </p>
+          {/* The self-hosted path stays reachable, one fold down — it's the
+              minority route now, but the source build shouldn't need a hunt. */}
+          {/* mt-auto keeps it on the card's floor when the caveats column runs
+              taller; the buttons' mb-8 guarantees the gap when it doesn't. */}
+          <details className="mt-auto rounded-xl border border-field-600/60 bg-field-900/50 open:border-field-500">
+            <summary className="cursor-pointer px-4 py-3 text-sm font-semibold text-star-100 transition-colors hover:text-flare-300">
+              {t("install.zipTitle")}
+            </summary>
+            <div className="border-t border-field-600/60 px-4 py-3">
+              <p className="text-sm leading-relaxed text-star-300">{t("install.zipSteps")}</p>
+              <a
+                href={LINKS.zip}
+                className="mt-3 inline-block text-sm font-semibold text-flare-300 underline decoration-flare-500/40 underline-offset-4 hover:text-flare-200"
+              >
+                {t("install.downloadZip")}
+              </a>
+            </div>
+          </details>
         </div>
 
         {/* caveats — said plainly */}

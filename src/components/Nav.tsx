@@ -7,9 +7,9 @@ import { GithubMark } from "./GithubMark";
 /**
  * The page's own browser chrome: favicon + wordmark on the left, an omnibox
  * pill in the middle, and the actions a chrome bar would carry on the right —
- * including the one we want taken (Download gets the glow; see DESIGN.md's
- * Glow-Means-Live rule: it's the primary action). Like the hero's, it also
- * jumps to the flight plan — the ZIP is inert until it's loaded unpacked.
+ * including the one we want taken (the store CTA gets the glow; see DESIGN.md's
+ * Glow-Means-Live rule: it's the primary action). It names the store rather
+ * than the visitor's browser — the hero, which detects, does that naming.
  * GitHub sits with the actions, not the section anchors: it's an external
  * destination, and the icon keeps it visible on mobile, where the center
  * links collapse.
@@ -115,10 +115,9 @@ export function Nav() {
           </div>
 
           <a
-            href={LINKS.zip}
-            onClick={() => {
-              window.location.hash = "#install";
-            }}
+            href={LINKS.store}
+            target="_blank"
+            rel="noreferrer"
             className="rounded-full bg-flare-500 px-4 py-2 text-sm font-semibold text-field-950 shadow-[0_0_24px_-4px] shadow-flare-500/50 transition-all hover:bg-flare-400 hover:shadow-flare-400/60"
           >
             {t("nav.download")}
