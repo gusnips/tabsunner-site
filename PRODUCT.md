@@ -35,7 +35,9 @@ Two claims a neighboring product cannot copy:
    `chrome/src/modules/providers/presets.ts` — the site's chip list is the 12 vendor names.
    **Prose naming the subscriptions names the products instead — Claude, ChatGPT, Kimi** — which
    is what the extension's own subscription rows say, and what people recognize as the thing
-   they pay for. The chip list stays vendors because it counts providers, not rows.
+   they pay for. The chip list stays vendors because it counts providers, not rows, so the copy
+   has to bridge the two vocabularies itself ("Anthropic, OpenAI and Kimi appear twice") — drop
+   that clause and the sentence sells a Claude plan the chips below never mention.
 
 ## Operating Context
 

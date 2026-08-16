@@ -68,7 +68,7 @@ export const ptBR: Locale = {
     items: [
       {
         title: "Use o provedor que quiser",
-        body: "São 15 presets para os 12 provedores abaixo: faça login com a assinatura do Claude, do ChatGPT ou da Kimi que você já paga, ou cole uma chave de API — além de qualquer endpoint que fale o formato da OpenAI ou da Anthropic. Sem lock-in e sem servidor no meio do caminho.",
+        body: "São 15 presets para os 12 provedores abaixo — Anthropic, OpenAI e Kimi aparecem duas vezes: faça login com o plano do Claude, do ChatGPT ou da Kimi que você já paga, ou cole uma chave de API. Além de qualquer endpoint que fale o formato da OpenAI ou da Anthropic. Sem lock-in e sem servidor no meio do caminho.",
       },
       {
         title: "Cliques e teclas de verdade",
