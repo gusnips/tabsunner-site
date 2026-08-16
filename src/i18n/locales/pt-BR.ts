@@ -132,12 +132,17 @@ export const ptBR: Locale = {
       "Só navegadores Chromium de desktop — Chrome, Brave, Edge, Arc, Opera, Vivaldi. No Edge e no Opera é preciso permitir extensões de outras lojas antes.",
       "A tela de instalação pede acesso amplo às suas abas. Esse acesso é o produto — é assim que o agente lê as páginas e digita de verdade. O que ele faz com isso está na seção logo abaixo.",
       "O modelo é por sua conta: uma assinatura de provedor que você já paga, ou uma chave de API. Não existe conta TabRunner nem plano gratuito incluído.",
-      "Já está com a versão descompactada instalada? Remova antes — a da loja usa o mesmo ID de extensão e o Chrome não roda as duas. As configurações não vão junto.",
+      "Já está com a versão descompactada instalada? Remova antes — a da loja usa o mesmo ID de extensão e o Chrome não roda as duas. Remover apaga o armazenamento dela: seus provedores, logins e conversas não vão junto.",
     ],
     releaseNotes: "Notas da versão",
     zipTitle: "Prefere não usar a loja?",
     zipSteps:
-      "Baixe o ZIP e descompacte numa pasta que você vá manter. Depois: chrome://extensions → Modo do desenvolvedor → Carregar sem compactação → selecione essa pasta. Ela atualiza na mão, não sozinha, e não pode conviver com a instalação da loja.",
+      "Baixe o ZIP e descompacte numa pasta que você vá manter. Depois: chrome://extensions → Modo do desenvolvedor → Carregar sem compactação → selecione essa pasta. Ela não pode conviver com a instalação da loja.",
+    zipUpdateTitle: "Como atualizar",
+    zipUpdateBody:
+      "Extraia cada ZIP novo por cima dessa mesma pasta, substituindo os arquivos, e clique em ⟳ na página chrome://extensions.",
+    zipUpdateWarning:
+      "Nunca remova a extensão para instalar de novo — o Chrome apaga o armazenamento dela na saída, e seus provedores, logins e conversas vão junto.",
     downloadZip: "Baixar ZIP",
   },
   privacy: {

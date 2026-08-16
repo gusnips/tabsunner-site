@@ -132,12 +132,17 @@ export const esES: Locale = {
       "Solo navegadores Chromium de escritorio — Chrome, Brave, Edge, Arc, Opera, Vivaldi. En Edge y Opera hay que permitir antes las extensiones de otras tiendas.",
       "La pantalla de instalación pide acceso amplio a tus pestañas. Ese acceso es el producto — es como el agente lee las páginas y escribe de verdad. Lo que hace con él está en la sección de abajo.",
       "El modelo lo pones tú: una suscripción de proveedor que ya pagas, o una clave de API. No hay cuenta de TabRunner ni plan gratuito incluido.",
-      "¿Ya tienes instalada la versión descomprimida? Quítala antes — la de la tienda usa el mismo ID de extensión y Chrome no ejecuta las dos. Los ajustes no se conservan.",
+      "¿Ya tienes instalada la versión descomprimida? Quítala antes — la de la tienda usa el mismo ID de extensión y Chrome no ejecuta las dos. Quitarla borra su almacenamiento: tus proveedores, sesiones y conversaciones no se conservan.",
     ],
     releaseNotes: "Notas de la versión",
     zipTitle: "¿Prefieres no usar la tienda?",
     zipSteps:
-      "Descarga el ZIP y descomprímelo en una carpeta que vayas a conservar. Luego: chrome://extensions → Modo de desarrollador → Cargar descomprimida → selecciona esa carpeta. Se actualiza a mano, no sola, y no puede convivir con la instalación de la tienda.",
+      "Descarga el ZIP y descomprímelo en una carpeta que vayas a conservar. Luego: chrome://extensions → Modo de desarrollador → Cargar descomprimida → selecciona esa carpeta. No puede convivir con la instalación de la tienda.",
+    zipUpdateTitle: "Cómo actualizar",
+    zipUpdateBody:
+      "Extrae cada ZIP nuevo sobre esa misma carpeta, reemplazando los archivos, y pulsa ⟳ en chrome://extensions.",
+    zipUpdateWarning:
+      "Nunca quites la extensión para reinstalarla — Chrome borra su almacenamiento al salir, y tus proveedores, sesiones y conversaciones se van con ella.",
     downloadZip: "Descargar ZIP",
   },
   privacy: {

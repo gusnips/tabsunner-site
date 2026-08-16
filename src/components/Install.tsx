@@ -86,6 +86,24 @@ export function Install() {
               >
                 {t("install.downloadZip")}
               </a>
+
+              {/* Updating is where this path quietly costs people their data: a
+                  new ZIP unzips to a NEW folder, Chrome refuses the duplicate
+                  id, and the obvious way out — Remove, then load again — takes
+                  the storage with it. The steps and the one thing never to do
+                  sit together, weighted by contrast alone: the Two Lights rule
+                  means a warning gets no hue of its own. */}
+              <div className="mt-5 border-t border-field-600/60 pt-4">
+                <p className="font-mono text-[10px] tracking-wider text-star-500 uppercase">
+                  {t("install.zipUpdateTitle")}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-star-300">
+                  {t("install.zipUpdateBody")}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed font-medium text-star-100">
+                  {t("install.zipUpdateWarning")}
+                </p>
+              </div>
             </div>
           </details>
         </div>

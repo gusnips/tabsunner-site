@@ -126,12 +126,17 @@ export const enUS = {
       "Chromium desktop browsers only — Chrome, Brave, Edge, Arc, Opera, Vivaldi. Edge and Opera ask you to allow extensions from other stores first.",
       "The install prompt asks for wide access to your tabs. That access is the product — it's how the agent reads pages and types for real. What it does with it is the section below.",
       "You bring the model: a provider subscription you already pay for, or an API key. There's no TabRunner account and no free tier bundled in.",
-      "Already running the unpacked build? Remove it first — the store version shares its extension ID and Chrome won't run both. Settings don't carry over.",
+      "Already running the unpacked build? Remove it first — the store version shares its extension ID and Chrome won't run both. Removing deletes its storage, so your providers, sign-ins and conversations don't carry over.",
     ],
     releaseNotes: "Release notes",
     zipTitle: "Rather not use the store?",
     zipSteps:
-      "Download the ZIP and unzip it somewhere you'll keep it, then chrome://extensions → Developer mode → Load unpacked → select that folder. It updates by hand, not on its own, and it can't sit alongside the store install.",
+      "Download the ZIP and unzip it somewhere you'll keep it, then chrome://extensions → Developer mode → Load unpacked → select that folder. It can't sit alongside the store install.",
+    zipUpdateTitle: "Updating",
+    zipUpdateBody:
+      "Extract each new ZIP over that same folder, replacing the files, then press ⟳ on chrome://extensions.",
+    zipUpdateWarning:
+      "Never remove the extension to reinstall it — Chrome deletes its storage on the way out, and your providers, sign-ins and conversations go with it.",
     downloadZip: "Download ZIP",
   },
   privacy: {
