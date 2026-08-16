@@ -62,7 +62,7 @@ export const enUS = {
     items: [
       {
         title: "Bring your own provider",
-        body: "15 presets across the 12 providers below: sign in with the Anthropic, OpenAI or Kimi subscription you already pay for, or paste an API key — plus any endpoint speaking the OpenAI or Anthropic wire format. No lock-in, no relay.",
+        body: "15 presets across the 12 providers below: sign in with the Claude, ChatGPT or Kimi subscription you already pay for, or paste an API key — plus any endpoint speaking the OpenAI or Anthropic wire format. No lock-in, no relay.",
       },
       {
         title: "Real trusted input",

@@ -33,6 +33,9 @@ Two claims a neighboring product cannot copy:
    endpoint. No TabRunner server, no relay, no account, no telemetry. Your key goes straight
    from the extension to your provider. Source of truth:
    `chrome/src/modules/providers/presets.ts` — the site's chip list is the 12 vendor names.
+   **Prose naming the subscriptions names the products instead — Claude, ChatGPT, Kimi** — which
+   is what the extension's own subscription rows say, and what people recognize as the thing
+   they pay for. The chip list stays vendors because it counts providers, not rows.
 
 ## Operating Context
 
